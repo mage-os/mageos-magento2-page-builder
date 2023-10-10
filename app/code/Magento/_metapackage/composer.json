@@ -1,13 +1,17 @@
 {
-    "name": "magento/page-builder",
-    "description": "Page Builder metapackage",
-    "require": {
-        "magento/module-page-builder": "*",
-        "magento/module-page-builder-analytics": "*",
-        "magento/module-cms-page-builder-analytics": "*",
-        "magento/module-page-builder-admin-analytics": "*",
-        "magento/module-catalog-page-builder-analytics": "*",
-        "magento/module-aws-s3-page-builder": "*"
-    },
-    "type": "metapackage"
+  "name": "mage-os/page-builder",
+  "description": "Page Builder metapackage",
+  "require": {
+    "mage-os/module-page-builder": "1.0.1",
+    "mage-os/module-page-builder-analytics": "1.0.1",
+    "mage-os/module-cms-page-builder-analytics": "1.0.1",
+    "mage-os/module-page-builder-admin-analytics": "1.0.1",
+    "mage-os/module-catalog-page-builder-analytics": "1.0.1",
+    "mage-os/module-aws-s3-page-builder": "1.0.1"
+  },
+  "type": "metapackage",
+  "version": "1.0.1",
+  "replace": {
+    "magento/page-builder": "1.7.3-p3"
+  }
 }

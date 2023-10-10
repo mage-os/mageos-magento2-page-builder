@@ -1,22 +1,26 @@
 {
-    "name": "magento/module-page-builder-analytics",
-    "description": "Page Builder Analytics module",
-    "require": {
-        "magento/module-analytics": "*",
-        "magento/module-page-builder": "*",
-        "magento/framework": "*",
-        "php": "~8.1.0||~8.2.0"
-    },
-    "type": "magento2-module",
-    "license": [
-        "proprietary"
+  "name": "mage-os/module-page-builder-analytics",
+  "description": "Page Builder Analytics module",
+  "require": {
+    "mage-os/module-analytics": "1.0.1",
+    "mage-os/module-page-builder": "1.0.1",
+    "mage-os/framework": "1.0.1",
+    "php": "~8.1.0||~8.2.0"
+  },
+  "type": "magento2-module",
+  "license": [
+    "proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
     ],
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "Magento\\PageBuilderAnalytics\\": ""
-        }
+    "psr-4": {
+      "Magento\\PageBuilderAnalytics\\": ""
     }
+  },
+  "version": "1.0.1",
+  "replace": {
+    "magento/module-page-builder-analytics": "1.6.3"
+  }
 }

@@ -1,24 +1,28 @@
 {
-    "name": "magento/module-aws-s3-page-builder",
-    "description": "Aws S3 Page Builder module",
-    "require": {
-        "magento/framework": "*",
-        "php": "~8.1.0||~8.2.0"
-    },
-    "suggest": {
-        "magento/module-page-builder": "*",
-        "magento/module-aws-s3": "*"
-    },
-    "type": "magento2-module",
-    "license": [
-        "proprietary"
+  "name": "mage-os/module-aws-s3-page-builder",
+  "description": "Aws S3 Page Builder module",
+  "require": {
+    "mage-os/framework": "1.0.1",
+    "php": "~8.1.0||~8.2.0"
+  },
+  "suggest": {
+    "mage-os/module-page-builder": "1.0.1",
+    "mage-os/module-aws-s3": "1.0.1"
+  },
+  "type": "magento2-module",
+  "license": [
+    "proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
     ],
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "Magento\\AwsS3PageBuilder\\": ""
-        }
+    "psr-4": {
+      "Magento\\AwsS3PageBuilder\\": ""
     }
+  },
+  "version": "1.0.1",
+  "replace": {
+    "magento/module-aws-s3-page-builder": "1.0.3"
+  }
 }
