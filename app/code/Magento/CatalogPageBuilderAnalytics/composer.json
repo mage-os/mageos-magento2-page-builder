@@ -1,25 +1,29 @@
 {
-    "name": "magento/module-catalog-page-builder-analytics",
-    "description": "Catalog Page Builder Analytics module",
-    "config": {
-        "sort-packages": true
-    },
-    "require": {
-        "magento/module-page-builder-analytics": "*",
-        "magento/module-catalog": "*",
-        "magento/framework": "*",
-        "php": "~8.1.0||~8.2.0||~8.3.0"
-    },
-    "type": "magento2-module",
-    "license": [
-        "proprietary"
+  "name": "mage-os/module-catalog-page-builder-analytics",
+  "description": "Catalog Page Builder Analytics module",
+  "config": {
+    "sort-packages": true
+  },
+  "require": {
+    "mage-os/module-page-builder-analytics": "1.0.3",
+    "mage-os/module-catalog": "1.0.3",
+    "mage-os/framework": "1.0.3",
+    "php": "~8.1.0||~8.2.0||~8.3.0"
+  },
+  "type": "magento2-module",
+  "license": [
+    "proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
     ],
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "Magento\\CatalogPageBuilderAnalytics\\": ""
-        }
+    "psr-4": {
+      "Magento\\CatalogPageBuilderAnalytics\\": ""
     }
+  },
+  "version": "1.0.3",
+  "replace": {
+    "magento/module-catalog-page-builder-analytics": "1.6.4"
+  }
 }
