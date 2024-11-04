@@ -39,27 +39,41 @@ class DefaultConfigProvider implements \Magento\Framework\Data\Wysiwyg\ConfigPro
      */
     public function getConfig(\Magento\Framework\DataObject $config): \Magento\Framework\DataObject
     {
+        $defaultSettings = [
+            'menubar' => 'edit insert view format table help',
+            'statusbar' => false,
+            'image_advtab' => true,
+            'promotion' => false,
+        ];
+
         $config->addData(
             [
                 'tinymce' => [
-                    'toolbar' => 'undo redo | styles | fontsizeselect | lineheight | forecolor backcolor ' .
-                        '| bold italic underline | alignleft aligncenter alignright | numlist bullist ' .
-                        '| link image table charmap',
+                    'toolbar' => 'blocks | fontfamily fontsizeinput lineheight | forecolor backcolor | '
+                        . 'bold italic underline | alignleft aligncenter alignright alignjustify | '
+                        . 'bullist numlist | link image',
 
                     'plugins' => implode(
                         ' ',
                         [
                             'advlist',
+                            'anchor',
                             'autolink',
-                            'lists',
-                            'link',
                             'charmap',
-                            'media',
-                            'table',
                             'code',
+                            'codesample',
+                            'directionality',
+                            'emoticons',
                             'help',
+                            'image',
+                            'link',
+                            'lists',
+                            'media',
+                            'nonbreaking',
+                            'preview',
                             'table',
-                            'image'
+                            'visualblocks',
+                            'visualchars',
                         ]
                     ),
                     'content_css' => [
@@ -67,7 +81,7 @@ class DefaultConfigProvider implements \Magento\Framework\Data\Wysiwyg\ConfigPro
                         $this->assetRepo->getUrl('Magento_PageBuilder::css/source/form/element/tinymce.css')
                     ]
                 ],
-                'settings' => $this->additionalSettings
+                'settings' => array_replace_recursive($defaultSettings, $this->additionalSettings),
             ]
         );
         return $config;
