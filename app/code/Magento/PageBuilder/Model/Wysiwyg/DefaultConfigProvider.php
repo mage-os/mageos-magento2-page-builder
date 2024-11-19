@@ -1,11 +1,14 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2018 Adobe
+ * All Rights Reserved.
  */
 declare(strict_types=1);
 
 namespace Magento\PageBuilder\Model\Wysiwyg;
+
+use Magento\Framework\DataObject;
+use Magento\Framework\View\Asset\Repository;
 
 /**
  * This DefaultConfigProvider overrides existing configuration provided from the cms module
@@ -13,19 +16,19 @@ namespace Magento\PageBuilder\Model\Wysiwyg;
 class DefaultConfigProvider implements \Magento\Framework\Data\Wysiwyg\ConfigProviderInterface
 {
     /**
-     * @var \Magento\Framework\View\Asset\Repository
+     * @var Repository
      */
-    private $assetRepo;
+    private Repository $assetRepo;
     /**
      * @var array
      */
     private $additionalSettings;
     /**
-     * @param \Magento\Framework\View\Asset\Repository $assetRepo
+     * @param Repository $assetRepo
      * @param array $additionalSettings
      */
     public function __construct(
-        \Magento\Framework\View\Asset\Repository $assetRepo,
+        Repository $assetRepo,
         array $additionalSettings
     ) {
         $this->assetRepo = $assetRepo;
@@ -34,15 +37,15 @@ class DefaultConfigProvider implements \Magento\Framework\Data\Wysiwyg\ConfigPro
     /**
      * Returns configuration data
      *
-     * @param \Magento\Framework\DataObject $config
-     * @return \Magento\Framework\DataObject
+     * @param DataObject $config
+     * @return DataObject
      */
-    public function getConfig(\Magento\Framework\DataObject $config): \Magento\Framework\DataObject
+    public function getConfig(DataObject $config): DataObject
     {
         $config->addData(
             [
                 'tinymce' => [
-                    'toolbar' => 'undo redo | styles | fontsizeselect | lineheight | forecolor backcolor ' .
+                    'toolbar' => 'undo redo | styles | fontfamily fontsize | lineheight | forecolor backcolor ' .
                         '| bold italic underline | alignleft aligncenter alignright | numlist bullist ' .
                         '| link image table charmap',
 
