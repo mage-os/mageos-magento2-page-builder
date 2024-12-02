@@ -296,8 +296,8 @@ class ProductListTest extends TestCase
     }
 
     #[
-        AppArea('adminhtml'),
-        Config('dev/template/minify_html', 1, 'store', 'default'),
+        AppArea('frontend'),
+        Config('dev/template/minify_html', 1, 'store', 'default')
     ]
     public function testWidgetWithMinification()
     {
