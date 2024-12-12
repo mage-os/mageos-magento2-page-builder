@@ -73,7 +73,7 @@ class Document implements DocumentInterface
     /**
      * @inheritDoc
      */
-    public function createElement(string $name, string $value = null): ElementInterface
+    public function createElement(string $name, ?string $value = null): ElementInterface
     {
         return $this->objectManager->create(
             ElementInterface::class,
@@ -106,7 +106,7 @@ class Document implements DocumentInterface
     /**
      * @inheritDoc
      */
-    public function saveHTML(DOMNode $node = null): string
+    public function saveHTML(?DOMNode $node = null): string
     {
         return $this->document->saveHTML($node);
     }

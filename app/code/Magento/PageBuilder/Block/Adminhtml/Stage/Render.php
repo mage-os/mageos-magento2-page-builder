@@ -56,7 +56,7 @@ class Render extends Template
         Config $config,
         Json $json,
         array $data = [],
-        Minification $minification = null
+        ?Minification $minification = null
     ) {
         parent::__construct($context, $data);
         $this->fileManager = $fileManager;

@@ -23,7 +23,7 @@ class WysiwygConfigDataProcessor implements
      * @param Config|null $config
      */
     public function __construct(
-        Config $config = null
+        ?Config $config = null
     ) {
         $this->config = $config ?: ObjectManager::getInstance()->get(Config::class);
     }

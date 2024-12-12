@@ -63,7 +63,7 @@ class HtmlCode extends \Magento\Ui\Component\Form\Field
         BackendUrlInterface $backendUrl,
         Images $imagesHelper,
         VariableConfig $variableConfig,
-        OpenDialogUrl $openDialogUrl = null,
+        ?OpenDialogUrl $openDialogUrl = null,
         $currentTreePath = 'wysiwyg',
         $components = [],
         array $data = []

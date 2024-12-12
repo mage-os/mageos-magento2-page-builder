@@ -49,7 +49,7 @@ class WysiwygSetup extends Template
         Context $context,
         ConfigInterface $config,
         array $data = [],
-        FrontendInterface $cache = null,
+        ?FrontendInterface $cache = null,
         ?RandomKey $sessionRandomKey = null
     ) {
         $this->config = $config;

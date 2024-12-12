@@ -75,7 +75,7 @@ class DesignLoader
         \Magento\Catalog\Block\Product\ImageFactory $subject,
         Product $product,
         string $imageId,
-        array $attributes = null
+        ?array $attributes = null
     ) {
         if ($this->preview->isPreviewMode()) {
             $this->appState->emulateAreaCode(

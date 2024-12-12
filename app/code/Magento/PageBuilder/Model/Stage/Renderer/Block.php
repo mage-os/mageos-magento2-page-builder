@@ -46,7 +46,7 @@ class Block implements \Magento\PageBuilder\Model\Stage\RendererInterface
         \Magento\PageBuilder\Model\Config $config,
         \Magento\Framework\View\Element\BlockFactory $blockFactory,
         ResultFactory $resultFactory,
-        Template $templateFilter = null
+        ?Template $templateFilter = null
     ) {
         $this->config = $config;
         $this->blockFactory = $blockFactory;

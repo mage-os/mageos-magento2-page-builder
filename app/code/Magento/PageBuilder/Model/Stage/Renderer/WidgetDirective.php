@@ -41,7 +41,7 @@ class WidgetDirective implements \Magento\PageBuilder\Model\Stage\RendererInterf
     public function __construct(
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Widget\Model\Template\Filter $directiveFilter,
-        Template $templateFilter = null
+        ?Template $templateFilter = null
     ) {
         $this->storeManager = $storeManager;
         $this->directiveFilter = $directiveFilter;

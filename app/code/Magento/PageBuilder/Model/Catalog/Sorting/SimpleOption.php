@@ -43,9 +43,9 @@ class SimpleOption implements OptionInterface
      */
     public function __construct(
         string $label,
-        string $sortDirection = null,
-        string $attributeField = null,
-        string $secondarySortDirection = null
+        ?string $sortDirection = null,
+        ?string $attributeField = null,
+        ?string $secondarySortDirection = null
     ) {
         $this->label = $label;
         $this->sortDirection = $sortDirection;

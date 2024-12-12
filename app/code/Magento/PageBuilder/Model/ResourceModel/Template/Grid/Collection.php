@@ -62,7 +62,7 @@ class Collection extends TemplateCollection implements SearchResultInterface
         $resourceModel,
         $model = Document::class,
         $connection = null,
-        AbstractDb $resource = null
+        ?AbstractDb $resource = null
     ) {
         $this->resourceModel = $resourceModel;
         $this->model = $model;
@@ -128,7 +128,7 @@ class Collection extends TemplateCollection implements SearchResultInterface
      * @return $this
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function setSearchCriteria(SearchCriteriaInterface $searchCriteria = null)
+    public function setSearchCriteria(?SearchCriteriaInterface $searchCriteria = null)
     {
         return $this;
     }
@@ -162,7 +162,7 @@ class Collection extends TemplateCollection implements SearchResultInterface
      * @return $this
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function setItems(array $items = null)
+    public function setItems(?array $items = null)
     {
         return $this;
     }

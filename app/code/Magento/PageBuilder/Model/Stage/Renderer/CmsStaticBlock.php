@@ -56,7 +56,7 @@ class CmsStaticBlock implements \Magento\PageBuilder\Model\Stage\RendererInterfa
         WidgetDirective $widgetDirectiveRenderer,
         LoggerInterface $loggerInterface,
         HtmlFilter $htmlFilter,
-        Template $templateFilter = null
+        ?Template $templateFilter = null
     ) {
         $this->blockCollectionFactory = $blockCollectionFactory;
         $this->widgetDirectiveRenderer = $widgetDirectiveRenderer;

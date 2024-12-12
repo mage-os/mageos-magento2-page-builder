@@ -158,11 +158,11 @@ class Config
         \Magento\PageBuilder\Model\WidgetInitializerConfig $widgetInitializerConfig,
         array $rootContainerConfig = [],
         array $data = [],
-        \Magento\Widget\Model\Widget\Config $widgetConfig = null,
-        \Magento\Variable\Model\Variable\Config $variableConfig = null,
-        AuthorizationInterface $authorization = null,
-        FrontendInterface $cache = null,
-        Json $serializer = null,
+        ?\Magento\Widget\Model\Widget\Config $widgetConfig = null,
+        ?\Magento\Variable\Model\Variable\Config $variableConfig = null,
+        ?AuthorizationInterface $authorization = null,
+        ?FrontendInterface $cache = null,
+        ?Json $serializer = null,
         ?RandomKey $sessionRandomKey = null
     ) {
         $this->config = $config;

@@ -32,7 +32,7 @@ class WidgetInitializerConfig
      */
     public function __construct(
         array $config,
-        ConfigInterface $viewConfig = null
+        ?ConfigInterface $viewConfig = null
     ) {
         $this->config = $config;
         $this->viewConfig = $viewConfig ?: ObjectManager::getInstance()->get(ConfigInterface::class);

@@ -70,10 +70,10 @@ class Wysiwyg extends \Magento\Ui\Component\Form\Element\Wysiwyg
         array $components = [],
         array $data = [],
         array $config = [],
-        PageBuilderConfig $pageBuilderConfig = null,
+        ?PageBuilderConfig $pageBuilderConfig = null,
         bool $overrideSnapshot = false,
-        Repository $assetRepo = null,
-        AuthorizationInterface $authorization = null
+        ?Repository $assetRepo = null,
+        ?AuthorizationInterface $authorization = null
     ) {
         $this->assetRepo = $assetRepo ?: ObjectManager::getInstance()->get(Repository::class);
         $this->authorization = $authorization ?: ObjectManager::getInstance()->get(AuthorizationInterface::class);

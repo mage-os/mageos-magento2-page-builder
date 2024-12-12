@@ -43,7 +43,7 @@ class Preview extends \Magento\Framework\App\Action\Action implements HttpPostAc
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
         \Magento\PageBuilder\Model\Stage\RendererPool $rendererPool,
-        \Magento\Backend\Model\Auth $auth = null
+        ?\Magento\Backend\Model\Auth $auth = null
     ) {
         parent::__construct($context);
 
