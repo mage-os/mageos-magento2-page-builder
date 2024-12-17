@@ -1,6 +1,12 @@
 {
     "name": "magento/module-page-builder",
     "description": "Page Builder module",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:djadobe16/Dom.git"
+        }
+    ],
     "require": {
         "magento/framework": "*",
         "magento/module-eav": "*",
@@ -22,7 +28,7 @@
         "magento/module-require-js": "*",
         "magento/module-media-storage": "*",
         "php": "~8.2.0||~8.3.0||~8.4.0",
-        "phpgt/dom": "^4.1"
+        "phpgt/dom": "dev-php84-support"
     },
     "suggest": {
         "magento/module-review": "*"
