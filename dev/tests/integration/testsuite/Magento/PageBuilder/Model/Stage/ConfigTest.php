@@ -127,7 +127,7 @@ class ConfigTest extends TestCase
     /**
      * @param string|null $sessionId
      */
-    private function startNewSession(string $sessionId = null): void
+    private function startNewSession(?string $sessionId = null): void
     {
         /** @var SessionManagerInterface $session */
         $session = Bootstrap::getObjectManager()->get(SessionManagerInterface::class);
