@@ -15,6 +15,11 @@ use Magento\RequireJs\Model\FileManager;
 use Magento\PageBuilder\Model\Stage\Config;
 use Magento\Framework\Serialize\Serializer\Json;
 
+/**
+ * Class Render
+ *
+ * @api
+ */
 class Render extends Template
 {
     /**
