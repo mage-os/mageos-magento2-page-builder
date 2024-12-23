@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2019 Adobe
+ * All Rights Reserved.
  */
 
 namespace Magento\PageBuilder\Component\Form;
@@ -19,7 +19,7 @@ use Magento\Variable\Model\Variable\Config as VariableConfig;
  */
 class HtmlCode extends \Magento\Ui\Component\Form\Field
 {
-    const HTML_ID_PLACEHOLDER = 'HTML_ID_PLACEHOLDER';
+    public const HTML_ID_PLACEHOLDER = 'HTML_ID_PLACEHOLDER';
 
     /**
      * @var BackendUrlInterface

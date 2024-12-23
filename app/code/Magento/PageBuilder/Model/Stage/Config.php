@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2017 Adobe
+ * All Rights Reserved.
  */
 
 declare(strict_types=1);
@@ -24,17 +24,17 @@ use Magento\PageBuilder\Model\Session\RandomKey;
  */
 class Config
 {
-    const DEFAULT_PREVIEW_COMPONENT = 'Magento_PageBuilder/js/content-type/preview';
-    const DEFAULT_MASTER_COMPONENT = 'Magento_PageBuilder/js/content-type/master';
+    public const DEFAULT_PREVIEW_COMPONENT = 'Magento_PageBuilder/js/content-type/preview';
+    public const DEFAULT_MASTER_COMPONENT = 'Magento_PageBuilder/js/content-type/master';
 
-    const XML_PATH_COLUMN_GRID_DEFAULT = 'cms/pagebuilder/column_grid_default';
-    const XML_PATH_COLUMN_GRID_MAX = 'cms/pagebuilder/column_grid_max';
+    public const XML_PATH_COLUMN_GRID_DEFAULT = 'cms/pagebuilder/column_grid_default';
+    public const XML_PATH_COLUMN_GRID_MAX = 'cms/pagebuilder/column_grid_max';
 
-    const ROOT_CONTAINER_NAME = 'root-container';
+    public const ROOT_CONTAINER_NAME = 'root-container';
 
-    const TEMPLATE_DELETE_RESOURCE = 'Magento_PageBuilder::template_delete';
-    const TEMPLATE_SAVE_RESOURCE = 'Magento_PageBuilder::template_save';
-    const TEMPLATE_APPLY_RESOURCE = 'Magento_PageBuilder::template_apply';
+    public const TEMPLATE_DELETE_RESOURCE = 'Magento_PageBuilder::template_delete';
+    public const TEMPLATE_SAVE_RESOURCE = 'Magento_PageBuilder::template_save';
+    public const TEMPLATE_APPLY_RESOURCE = 'Magento_PageBuilder::template_apply';
 
     private const CONTENT_TYPE_CACHE_ID = 'CONTENT_TYPE';
     private const TINY_MCE_CONFIG_CACHE_ID = 'TINY_MCE_CONFIG';
