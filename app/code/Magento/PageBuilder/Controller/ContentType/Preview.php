@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2017 Adobe
+ * All Rights Reserved.
  */
 
 declare(strict_types=1);
@@ -20,6 +20,7 @@ use Magento\Framework\App\Action\HttpPostActionInterface;
  * @deprecated use \Magento\PageBuilder\Controller\Adminhtml\Stage\Preview
  *
  * @api
+ * @see MC-16152
  */
 class Preview extends \Magento\Framework\App\Action\Action implements HttpPostActionInterface
 {
@@ -70,7 +71,7 @@ class Preview extends \Magento\Framework\App\Action\Action implements HttpPostAc
 
             return $this->resultFactory->create(ResultFactory::TYPE_JSON)->setData($result);
         }
-
+        // @phpstan-ignore-next-line
         $this->_forward('noroute');
     }
 }
