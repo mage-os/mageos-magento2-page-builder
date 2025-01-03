@@ -22,7 +22,7 @@
         "magento/module-require-js": "*",
         "magento/module-media-storage": "*",
         "php": "~8.2.0||~8.3.0||~8.4.0",
-        "phpgt/dom": "dev-master"
+        "phpgt/dom": "^4.1"
     },
     "suggest": {
         "magento/module-review": "*"
