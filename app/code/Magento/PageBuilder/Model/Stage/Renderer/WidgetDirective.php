@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2018 Adobe
+ * All Rights Reserved.
  */
 
 declare(strict_types=1);
@@ -41,7 +41,7 @@ class WidgetDirective implements \Magento\PageBuilder\Model\Stage\RendererInterf
     public function __construct(
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Widget\Model\Template\Filter $directiveFilter,
-        Template $templateFilter = null
+        ?Template $templateFilter = null
     ) {
         $this->storeManager = $storeManager;
         $this->directiveFilter = $directiveFilter;

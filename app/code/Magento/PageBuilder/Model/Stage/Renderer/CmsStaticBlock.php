@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2018 Adobe
+ * All Rights Reserved.
  */
 
 declare(strict_types=1);
@@ -56,7 +56,7 @@ class CmsStaticBlock implements \Magento\PageBuilder\Model\Stage\RendererInterfa
         WidgetDirective $widgetDirectiveRenderer,
         LoggerInterface $loggerInterface,
         HtmlFilter $htmlFilter,
-        Template $templateFilter = null
+        ?Template $templateFilter = null
     ) {
         $this->blockCollectionFactory = $blockCollectionFactory;
         $this->widgetDirectiveRenderer = $widgetDirectiveRenderer;

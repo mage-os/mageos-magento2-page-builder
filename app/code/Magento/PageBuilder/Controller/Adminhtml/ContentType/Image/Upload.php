@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2017 Adobe
+ * All Rights Reserved.
  */
 namespace Magento\PageBuilder\Controller\Adminhtml\ContentType\Image;
 
@@ -17,9 +17,9 @@ use Magento\Framework\Filesystem;
  */
 class Upload extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
-    const UPLOAD_DIR = 'wysiwyg';
+    public const UPLOAD_DIR = 'wysiwyg';
 
-    const ADMIN_RESOURCE = 'Magento_Backend::content';
+    public const ADMIN_RESOURCE = 'Magento_Backend::content';
 
     /**
      * @var \Magento\Framework\Filesystem\DirectoryList
@@ -71,7 +71,7 @@ class Upload extends \Magento\Backend\App\Action implements HttpPostActionInterf
         \Magento\Framework\File\UploaderFactory $uploaderFactory,
         \Magento\Framework\Filesystem\DirectoryList $directoryList,
         \Magento\Cms\Helper\Wysiwyg\Images $cmsWysiwygImages,
-        Filesystem $filesystem = null
+        ?Filesystem $filesystem = null
     ) {
         parent::__construct($context);
         $this->resultJsonFactory = $resultJsonFactory;
