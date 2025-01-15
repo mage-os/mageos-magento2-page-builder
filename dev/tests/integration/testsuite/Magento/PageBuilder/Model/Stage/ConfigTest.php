@@ -1,9 +1,8 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2019 Adobe
+ * All Rights Reserved.
  */
-
 declare(strict_types=1);
 
 namespace Magento\PageBuilder\Model\Stage;
@@ -127,7 +126,7 @@ class ConfigTest extends TestCase
     /**
      * @param string|null $sessionId
      */
-    private function startNewSession(string $sessionId = null): void
+    private function startNewSession(?string $sessionId = null): void
     {
         /** @var SessionManagerInterface $session */
         $session = Bootstrap::getObjectManager()->get(SessionManagerInterface::class);
