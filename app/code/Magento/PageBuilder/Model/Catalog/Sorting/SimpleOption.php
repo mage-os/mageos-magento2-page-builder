@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2019 Adobe
+ * All Rights Reserved.
  */
 
 declare(strict_types=1);
@@ -43,9 +43,9 @@ class SimpleOption implements OptionInterface
      */
     public function __construct(
         string $label,
-        string $sortDirection = null,
-        string $attributeField = null,
-        string $secondarySortDirection = null
+        ?string $sortDirection = null,
+        ?string $attributeField = null,
+        ?string $secondarySortDirection = null
     ) {
         $this->label = $label;
         $this->sortDirection = $sortDirection;

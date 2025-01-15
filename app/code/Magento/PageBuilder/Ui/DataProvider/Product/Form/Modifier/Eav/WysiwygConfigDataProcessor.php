@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2018 Adobe
+ * All Rights Reserved.
  */
 
 declare(strict_types=1);
@@ -23,7 +23,7 @@ class WysiwygConfigDataProcessor implements
      * @param Config|null $config
      */
     public function __construct(
-        Config $config = null
+        ?Config $config = null
     ) {
         $this->config = $config ?: ObjectManager::getInstance()->get(Config::class);
     }
