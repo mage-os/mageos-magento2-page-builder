@@ -94,6 +94,7 @@
         <waitForElementVisible stepKey="see18pxAfterPlus" selector="//*[@data-mce-style and contains(@style, 'font-size: 18px')]" />
 
         <!--Verify LineHeight-->
+        <comment userInput="Verify LineHeight" stepKey="commentVerifyLineHeight"/>
         <click selector="{{WYSIWYGOnPageBuilderInline.lineHeight}}" stepKey="clickOnLineHeight"/>
         <comment userInput="BIC Workaround" stepKey="seeLineHeight10px"/>
         <comment userInput="BIC Workaround" stepKey="seeLineHeight12px"/>
