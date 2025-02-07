@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- /**
-  * Copyright © Magento, Inc. All rights reserved.
-  * See COPYING.txt for license details.
-  */
+/**
+  * Copyright 2025 Adobe
+  * All Rights Reserved.
+ */
 -->
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
     <test name="TextVerifyTinyMCEToolbarOnPageBuilderStageTest">
@@ -47,16 +47,13 @@
         <seeElement selector="{{WYSIWYGOnPageBuilderInline.undo}}" stepKey="seeUndo"/>
         <seeElement selector="{{WYSIWYGOnPageBuilderInline.redo}}" stepKey="seeRedo"/>
         <seeElement selector="{{WYSIWYGOnPageBuilderInline.fontSize}}" stepKey="seeFontsize"/>
-
         <seeElement selector="{{WYSIWYGOnPageBuilderInline.lineHeight}}" stepKey="seeLineHeight"/>
         <seeElement selector="{{WYSIWYGOnPageBuilderInline.textColor}}" stepKey="seeTextColor"/>
         <seeElement selector="{{WYSIWYGOnPageBuilderInline.backgroundColor}}" stepKey="seeBackgroundColor"/>
         <!--Verify FontSize-->
         <comment userInput="Verify FontSize" stepKey="commentVerifyFontSize"/>
         <comment userInput="BIC Workaround" stepKey="clickOnFontSize"/>
-
         <click selector="{{WYSIWYGOnPageBuilderInline.fontSizeMinus}}" stepKey="clickOnFontSizeMinus"/>
-
         <waitForElementVisible stepKey="see13px"  selector="{{WYSIWYGOnPageBuilderInline.fontSizeValue('font-size: 13px')}}"/>
         <click selector="{{WYSIWYGOnPageBuilderInline.fontSizeMinus}}" stepKey="clickOnFontSizeMinusAgain"/>
         <waitForElementVisible stepKey="see12px" selector="//*[@data-mce-style and contains(@style, 'font-size: 12px')]" />
@@ -91,7 +88,6 @@
         <waitForElementVisible stepKey="see17pxAfterPlus" selector="//*[@data-mce-style and contains(@style, 'font-size: 17px')]" />
         <click selector="{{WYSIWYGOnPageBuilderInline.fontSizePlus}}" stepKey="clickOnFontSizePlusFive"/>
         <waitForElementVisible stepKey="see18pxAfterPlus" selector="//*[@data-mce-style and contains(@style, 'font-size: 18px')]" />
-
         <!--Verify LineHeight-->
         <comment userInput="Verify LineHeight" stepKey="commentVerifyLineHeight"/>
         <click selector="{{WYSIWYGOnPageBuilderInline.lineHeight}}" stepKey="clickOnLineHeight"/>
