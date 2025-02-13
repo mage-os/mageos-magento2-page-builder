@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--”∏π
- /**
-  * Copyright © Magento, Inc. All rights reserved.
-  * See COPYING.txt for license details.
-  */
+<!--
+/**
+  * Copyright 2025 Adobe
+  * All Rights Reserved.
+ */
 -->
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
     <test name="TextVerifyTinyMCEToolbarOnPageBuilderStageTest">
@@ -17,7 +17,6 @@
             <testCaseId value="MC-3463"/>
             <group value="pagebuilder"/>
             <group value="pagebuilder-text"/>
-            <group value="pr_exclude"/>
         </annotations>
         <before>
             <createData entity="_defaultCmsPage" stepKey="createCMSPage"/>
@@ -48,38 +47,14 @@
         <seeElement selector="{{WYSIWYGOnPageBuilderInline.undo}}" stepKey="seeUndo"/>
         <seeElement selector="{{WYSIWYGOnPageBuilderInline.redo}}" stepKey="seeRedo"/>
         <seeElement selector="{{WYSIWYGOnPageBuilderInline.fontSize}}" stepKey="seeFontsize"/>
-
         <seeElement selector="{{WYSIWYGOnPageBuilderInline.lineHeight}}" stepKey="seeLineHeight"/>
         <seeElement selector="{{WYSIWYGOnPageBuilderInline.textColor}}" stepKey="seeTextColor"/>
         <seeElement selector="{{WYSIWYGOnPageBuilderInline.backgroundColor}}" stepKey="seeBackgroundColor"/>
         <!--Verify FontSize-->
-        <comment userInput="Verify FontSize" stepKey="commentVerifyFontSize"/>
-        <comment userInput="BIC Workaround" stepKey="clickOnFontSize"/>
-
         <click selector="{{WYSIWYGOnPageBuilderInline.fontSizeMinus}}" stepKey="clickOnFontSizeMinus"/>
-
         <waitForElementVisible stepKey="see13px"  selector="{{WYSIWYGOnPageBuilderInline.fontSizeValue('font-size: 13px')}}"/>
         <click selector="{{WYSIWYGOnPageBuilderInline.fontSizeMinus}}" stepKey="clickOnFontSizeMinusAgain"/>
         <waitForElementVisible stepKey="see12px" selector="//*[@data-mce-style and contains(@style, 'font-size: 12px')]" />
-        <comment userInput="BIC Workaround" stepKey="see10px"/>
-        <comment userInput="BIC Workaround" stepKey="see14px"/>
-        <comment userInput="BIC Workaround" stepKey="see16px"/>
-        <comment userInput="BIC Workaround" stepKey="see18px"/>
-        <comment userInput="BIC Workaround" stepKey="see20px"/>
-        <comment userInput="BIC Workaround" stepKey="see24px"/>
-        <comment userInput="BIC Workaround" stepKey="see26px"/>
-        <comment userInput="BIC Workaround" stepKey="see28px"/>
-        <comment userInput="BIC Workaround" stepKey="see32px"/>
-        <comment userInput="BIC Workaround" stepKey="see34px"/>
-        <comment userInput="BIC Workaround" stepKey="see36px"/>
-        <comment userInput="BIC Workaround" stepKey="see38px"/>
-        <comment userInput="BIC Workaround" stepKey="see40px"/>
-        <comment userInput="BIC Workaround" stepKey="see42px"/>
-        <comment userInput="BIC Workaround" stepKey="see48px"/>
-        <comment userInput="BIC Workaround" stepKey="see52px"/>
-        <comment userInput="BIC Workaround" stepKey="see56px"/>
-        <comment userInput="BIC Workaround" stepKey="see64px"/>
-        <comment userInput="BIC Workaround" stepKey="see72px"/>
         <click selector="{{WYSIWYGOnPageBuilderInline.fontSizePlus}}" stepKey="clickOnFontSizePlus"/>
         <waitForElementVisible stepKey="see13pxAfterPlus" selector="//*[@data-mce-style and contains(@style, 'font-size: 13px')]" />
         <click selector="{{WYSIWYGOnPageBuilderInline.fontSizePlus}}" stepKey="clickOnFontSizePlusOne"/>
@@ -92,29 +67,9 @@
         <waitForElementVisible stepKey="see17pxAfterPlus" selector="//*[@data-mce-style and contains(@style, 'font-size: 17px')]" />
         <click selector="{{WYSIWYGOnPageBuilderInline.fontSizePlus}}" stepKey="clickOnFontSizePlusFive"/>
         <waitForElementVisible stepKey="see18pxAfterPlus" selector="//*[@data-mce-style and contains(@style, 'font-size: 18px')]" />
-
         <!--Verify LineHeight-->
+        <comment userInput="Verify LineHeight" stepKey="commentVerifyLineHeight"/>
         <click selector="{{WYSIWYGOnPageBuilderInline.lineHeight}}" stepKey="clickOnLineHeight"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight10px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight12px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight14px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight16px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight18px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight20px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight24px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight26px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight28px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight32px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight34px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight36px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight38px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight40px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight42px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight48px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight52px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight56px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight64px"/>
-        <comment userInput="BIC Workaround" stepKey="seeLineHeight72px"/>
         <waitForText userInput="1.1" stepKey="seeValue1"/>
         <waitForText userInput="1.2" stepKey="seeValue2"/>
         <waitForText userInput="1.3" stepKey="seeValue3"/>
