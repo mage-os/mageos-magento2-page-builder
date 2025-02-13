@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  /**
-  * Copyright 2020 Adobe
+  * Copyright 2025 Adobe
   * All Rights Reserved.
   */
 -->
@@ -13,7 +13,7 @@
         <element name="notCss" type="button" selector=".tox-tinymce:not(.tox-tinymce-inline)"/>
         <element name="undo" type="button" selector=".tox-tinymce-inline button[aria-label='Undo']"/>
         <element name="redo" type="button" selector=".tox-tinymce-inline button[aria-label='Redo']"/>
-        <element name="formatSelector" type="button" selector=".tox-tinymce-inline button[aria-label='Formats']"/>
+        <element name="formatSelector" type="button" selector=".tox-tinymce-inline button[aria-label='Format Paragraph']"/>
         <element name="fontSize" type="button" selector=".tox-tinymce-inline button[aria-label='Font sizes']"/>
         <element name="lineHeight" type="button" selector=".tox-tinymce-inline button[aria-label='Line height']"/>
         <element name="textColor" type="button" selector=".tox-tinymce-inline div[aria-label='Text color']"/>
