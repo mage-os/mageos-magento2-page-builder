@@ -14,7 +14,6 @@
         <element name="undo" type="button" selector=".tox-tinymce-inline button[aria-label='Undo']"/>
         <element name="redo" type="button" selector=".tox-tinymce-inline button[aria-label='Redo']"/>
         <element name="formatSelector" type="button" selector=".tox-tinymce-inline button[aria-label='Format Paragraph']"/>
-        <element name="fontSize" type="button" selector=".tox-tinymce-inline button[aria-label='Font sizes']"/>
         <element name="fontSize" type="button" selector=".tox-tinymce-inline button[aria-label*='font size']:nth-of-type(1)"/>
         <element name="fontSizeMinus" type="button" selector=".tox-tinymce-inline button[aria-label*='font size']:nth-of-type(1)"/>
         <element name="fontSizePlus" type="button" selector=".tox-tinymce-inline button[aria-label*='font size']:nth-of-type(2)"/>
