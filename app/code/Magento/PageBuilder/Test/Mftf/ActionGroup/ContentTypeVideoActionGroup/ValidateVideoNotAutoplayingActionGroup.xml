@@ -11,6 +11,6 @@
         <annotations>
             <description>Validates that the video content type is not autoplaying.</description>
         </annotations>
-        <waitForElementVisible selector="{{page.iframeNotAutoplaying(index)}}" stepKey="seeIframePlaying"/>
+        <waitForElementVisible selector="{{page.videoNotAutoplay(index)}}" stepKey="seeIframePlaying"/>
     </actionGroup>
 </actionGroups>
