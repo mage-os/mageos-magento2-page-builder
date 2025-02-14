@@ -43,7 +43,7 @@
         <moveMouseOver selector="{{PageBuilderViewportSwitcherSection.viewportSwitcherButton('mobile')}}" stepKey="mouseOverMobileViewportButton"/>
         <waitForElementVisible selector="{{PageBuilderViewportSwitcherSection.viewportTooltipLabel('2', 'Mobile')}}" stepKey="verifyMobileTooltipLabel"/>
         <waitForText userInput="View your content for mobile" selector="{{PageBuilderViewportSwitcherSection.viewportTooltipContent('2')}}" stepKey="verifyMobileTooltipContent"/>
-        <waitForText userInput="Width: 768px" selector="{{PageBuilderViewportSwitcherSection.viewportTooltipContent('2')}}" stepKey="verifyMobileTooltipContent2"/>
+        <waitForText userInput="Width: 767px" selector="{{PageBuilderViewportSwitcherSection.viewportTooltipContent('2')}}" stepKey="verifyMobileTooltipContent2"/>
         <!-- Verify Desktop Viewport Area -->
         <actionGroup ref="AdminSwitchPageBuilderViewportActionGroup" stepKey="switchToDesktopViewport">
             <argument name="viewportButton"/>

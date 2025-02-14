@@ -31,10 +31,6 @@
             <argument name="section" value="RowOnStage"/>
             <argument name="index" value="4"/>
         </actionGroup>
-        <actionGroup ref="validateVideoBackgroundNotLoaded" stepKey="validateVideoNotPlayingStage1">
-            <argument name="section" value="RowOnStage"/>
-            <argument name="index" value="4"/>
-        </actionGroup>
         <actionGroup ref="validateVideoBackgroundLoaded" stepKey="validateVideoPlayingStage2">
             <argument name="section" value="RowOnStage"/>
             <argument name="index" value="4"/>

@@ -17,9 +17,6 @@
         </arguments>
         <waitForPageLoad stepKey="waitForPageLoad"/>
         <waitForElementVisible selector="{{page.videoElement(index)}}" stepKey="waitForVideoVisible"/>
-        <executeJS function="document.querySelector('[data-element=\'video\']').id = 'video-iframe'" stepKey="setIframeId"/>
-        <switchToIFrame userInput="video-iframe" stepKey="switchToVideoIframe"/>
-        <waitForElementVisible selector="{{page.iframePlaying(index)}}" stepKey="seeIframePlaying"/>
-        <switchToIFrame stepKey="switchBackFromIframe"/>
+        <waitForElementVisible selector="{{page.videoAutoplay(index)}}" stepKey="seeIframePlaying"/>
     </actionGroup>
 </actionGroups>

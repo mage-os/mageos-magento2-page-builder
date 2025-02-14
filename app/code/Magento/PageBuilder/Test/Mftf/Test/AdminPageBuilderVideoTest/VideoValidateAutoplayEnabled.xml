@@ -45,7 +45,7 @@
             <argument name="contentType" value="PageBuilderVideoContentType"/>
         </actionGroup>
         <actionGroup ref="fillSlideOutPanelFieldGeneral" stepKey="enterVideoUrlProperty">
-            <argument name="property" value="PageBuilderVideoUrl_YouTube"/>
+            <argument name="property" value="PageBuilderVideoUrl_Cloud"/>
         </actionGroup>
         <actionGroup ref="conditionalClickSlideOutPanelFieldGeneral" stepKey="setAutoplayEnabled">
             <argument name="property" value="PageBuilderVideoAutoplay_Enabled"/>
@@ -54,7 +54,7 @@
         <!-- Validate Stage -->
         <actionGroup ref="validateVideoPlaying" stepKey="validateVideoPlayingStage">
             <argument name="page" value="VideoOnStage"/>
-            <argument name="url" value="PageBuilderVideoUrl_YouTube"/>
+            <argument name="url" value="PageBuilderVideoUrl_Cloud"/>
         </actionGroup>
         <actionGroup ref="exitPageBuilderFullScreen" stepKey="exitPageBuilderFullScreen"/>
         <actionGroup ref="SaveAndContinueEditCmsPageActionGroup" stepKey="saveAndContinueEditCmsPage"/>
@@ -62,13 +62,13 @@
         <!-- Validate Stage After Save -->
         <actionGroup ref="validateVideoPlaying" stepKey="validateVideoPlayingStage2">
             <argument name="page" value="VideoOnStage"/>
-            <argument name="url" value="PageBuilderVideoUrl_YouTube"/>
+            <argument name="url" value="PageBuilderVideoUrl_Cloud"/>
         </actionGroup>
         <actionGroup ref="openPageBuilderEditPanel" stepKey="openEditMenuOnStage2">
             <argument name="contentType" value="PageBuilderVideoContentType"/>
         </actionGroup>
         <actionGroup ref="seeInFieldSlideOutProperty" stepKey="seeVideoUrlInAdmin">
-            <argument name="property" value="PageBuilderVideoUrl_YouTube"/>
+            <argument name="property" value="PageBuilderVideoUrl_Cloud"/>
         </actionGroup>
         <actionGroup ref="seeOptionIsCheckedSlideOutProperty" stepKey="seeAutoplayEnabledAfterSave">
             <argument name="property" value="PageBuilderVideoAutoplay_Enabled"/>
@@ -79,7 +79,7 @@
         <!-- Validate Storefront -->
         <actionGroup ref="validateVideoPlaying" stepKey="validateVideoPlayingStorefront">
             <argument name="page" value="VideoOnStorefront"/>
-            <argument name="url" value="PageBuilderVideoUrl_YouTube"/>
+            <argument name="url" value="PageBuilderVideoUrl_Cloud"/>
         </actionGroup>
     </test>
 </tests>

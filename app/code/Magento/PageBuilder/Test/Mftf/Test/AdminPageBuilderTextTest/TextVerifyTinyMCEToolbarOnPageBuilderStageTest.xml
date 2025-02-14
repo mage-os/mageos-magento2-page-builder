@@ -54,49 +54,23 @@
         <!--Verify FontSize-->
         <comment userInput="Verify FontSize" stepKey="commentVerifyFontSize"/>
         <click selector="{{WYSIWYGOnPageBuilderInline.fontSize}}" stepKey="clickOnFontSize"/>
-        <see userInput="10px" stepKey="see10px"/>
-        <see userInput="12px" stepKey="see12px"/>
-        <see userInput="14px" stepKey="see14px"/>
-        <see userInput="16px" stepKey="see16px"/>
-        <see userInput="18px" stepKey="see18px"/>
-        <see userInput="20px" stepKey="see20px"/>
-        <see userInput="24px" stepKey="see24px"/>
-        <see userInput="26px" stepKey="see26px"/>
-        <see userInput="28px" stepKey="see28px"/>
-        <see userInput="32px" stepKey="see32px"/>
-        <see userInput="34px" stepKey="see34px"/>
-        <see userInput="36px" stepKey="see36px"/>
-        <see userInput="38px" stepKey="see38px"/>
-        <see userInput="40px" stepKey="see40px"/>
-        <see userInput="42px" stepKey="see42px"/>
-        <see userInput="48px" stepKey="see48px"/>
-        <see userInput="52px" stepKey="see52px"/>
-        <see userInput="56px" stepKey="see56px"/>
-        <see userInput="64px" stepKey="see64px"/>
-        <see userInput="72px" stepKey="see72px"/>
+        <see userInput="8pt" stepKey="see8pt"/>
+        <see userInput="10pt" stepKey="see10pt"/>
+        <see userInput="12pt" stepKey="see12pt"/>
+        <see userInput="14pt" stepKey="see14pt"/>
+        <see userInput="18pt" stepKey="see18pt"/>
+        <see userInput="24pt" stepKey="see24pt"/>
+        <see userInput="36pt" stepKey="see36pt"/>
         <!--Verify LineHeight-->
         <comment userInput="Verify LineHeight" stepKey="commentVerifyLineHeight"/>
         <click selector="{{WYSIWYGOnPageBuilderInline.lineHeight}}" stepKey="clickOnLineHeight"/>
-        <see userInput="10px" stepKey="seeLineHeight10px"/>
-        <see userInput="12px" stepKey="seeLineHeight12px"/>
-        <see userInput="14px" stepKey="seeLineHeight14px"/>
-        <see userInput="16px" stepKey="seeLineHeight16px"/>
-        <see userInput="18px" stepKey="seeLineHeight18px"/>
-        <see userInput="20px" stepKey="seeLineHeight20px"/>
-        <see userInput="24px" stepKey="seeLineHeight24px"/>
-        <see userInput="26px" stepKey="seeLineHeight26px"/>
-        <see userInput="28px" stepKey="seeLineHeight28px"/>
-        <see userInput="32px" stepKey="seeLineHeight32px"/>
-        <see userInput="34px" stepKey="seeLineHeight34px"/>
-        <see userInput="36px" stepKey="seeLineHeight36px"/>
-        <see userInput="38px" stepKey="seeLineHeight38px"/>
-        <see userInput="40px" stepKey="seeLineHeight40px"/>
-        <see userInput="42px" stepKey="seeLineHeight42px"/>
-        <see userInput="48px" stepKey="seeLineHeight48px"/>
-        <see userInput="52px" stepKey="seeLineHeight52px"/>
-        <see userInput="56px" stepKey="seeLineHeight56px"/>
-        <see userInput="64px" stepKey="seeLineHeight64px"/>
-        <see userInput="72px" stepKey="seeLineHeight72px"/>
+        <see userInput="1" stepKey="seeLineHeight1"/>
+        <see userInput="1.1" stepKey="seeLineHeight11"/>
+        <see userInput="1.2" stepKey="seeLineHeight12"/>
+        <see userInput="1.3" stepKey="seeLineHeight13"/>
+        <see userInput="1.4" stepKey="seeLineHeight14"/>
+        <see userInput="1.5" stepKey="seeLineHeight15"/>
+        <see userInput="2" stepKey="seeLineHeight2"/>
         <!--Verify FontStyle on preview-->
         <comment userInput="Verify FontStyle on preview" stepKey="commentVerifyFontsizeOnPreview"/>
         <clickWithLeftButton x="10" y="10" selector="{{TextOnStage.tinymce('1')}}" stepKey="focusOnEditorArea"/>

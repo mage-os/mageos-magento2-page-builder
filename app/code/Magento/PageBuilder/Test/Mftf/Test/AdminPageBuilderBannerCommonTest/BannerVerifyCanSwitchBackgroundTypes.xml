@@ -52,12 +52,6 @@
             <actionGroup ref="DeleteImageFromStorageActionGroup" stepKey="deleteFallbackImage1">
                 <argument name="Image" value="PageBuilderVideoBackgroundFallbackImage_GIF"/>
             </actionGroup>
-            <actionGroup ref="DeleteImageFromStorageActionGroup" stepKey="deleteBackgroundImage2">
-                <argument name="Image" value="PageBuilderBackgroundImage_JPG"/>
-            </actionGroup>
-            <actionGroup ref="DeleteImageFromStorageActionGroup" stepKey="deleteMobileBackgroundImage2">
-                <argument name="Image" value="PageBuilderBackgroundMobileImage_SpecialCharacters"/>
-            </actionGroup>
             <actionGroup ref="CliMediaGalleryEnhancedEnableActionGroup" stepKey="disableOldMediaGallery">
                 <argument name="enabled" value="1"/>
             </actionGroup>

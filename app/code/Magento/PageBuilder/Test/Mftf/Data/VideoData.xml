@@ -15,12 +15,19 @@
         <data key="fieldName">video_source</data>
         <data key="text">Video</data>
     </entity>
+    <entity name="PageBuilderVideoUrl_Cloud" type="pagebuilder_video_url_property">
+        <data key="name">Video URL</data>
+        <data key="section">general</data>
+        <data key="fieldName">video_source</data>
+        <data key="value">https://d1jivtmjs919qh.cloudfront.net/magento/pagebuilder/mftf/magento-enterprise.mp4</data>
+        <data key="renderedValue">https://d1jivtmjs919qh.cloudfront.net/magento/pagebuilder/mftf/magento-enterprise.mp4</data>
+    </entity>
     <entity name="PageBuilderVideoUrl_YouTube" type="pagebuilder_video_url_property">
         <data key="name">Video URL</data>
         <data key="section">general</data>
         <data key="fieldName">video_source</data>
-        <data key="value">https://www.youtube.com/embed/slOtnjsbff0</data>
-        <data key="renderedValue">https://www.youtube.com/embed/slOtnjsbff0</data>
+        <data key="value">https://player.vimeo.com/video/2393127</data>
+        <data key="renderedValue">https://player.vimeo.com/video/2393127</data>
     </entity>
     <entity name="PageBuilder_InvalidVideoURL_Text" type="pagebuilder_video_url_property">
         <data key="name">Video URL</data>
@@ -40,8 +47,8 @@
         <data key="name">Video URL</data>
         <data key="section">general</data>
         <data key="fieldName">video_source</data>
-        <data key="value">https://www.youtube.com/watch?v=slOtnjsbff0</data>
-        <data key="renderedValue">https://www.youtube.com/embed/slOtnjsbff0</data>
+        <data key="value">https://player.vimeo.com/video/2393127</data>
+        <data key="renderedValue">https://player.vimeo.com/video/2393127</data>
     </entity>
     <entity name="PageBuilderVideoUrl_Empty" type="pagebuilder_video_url_property">
         <data key="name">Video URL</data>
@@ -54,15 +61,15 @@
         <data key="name">Video URL</data>
         <data key="section">general</data>
         <data key="fieldName">video_source</data>
-        <data key="value">http://www.youtube.com/watch?v=slOtnjsbff0</data>
-        <data key="renderedValue">https://www.youtube.com/embed/slOtnjsbff0</data>
+        <data key="value">https://player.vimeo.com/video/2393127</data>
+        <data key="renderedValue">https://player.vimeo.com/video/2393127</data>
     </entity>
     <entity name="PageBuilderVideoUrl_YouTube_Nocookie" type="pagebuilder_video_url_property">
         <data key="name">Video URL</data>
         <data key="section">general</data>
         <data key="fieldName">video_source</data>
-        <data key="value">https://www.youtube-nocookie.com/embed/slOtnjsbff0</data>
-        <data key="renderedValue">https://www.youtube-nocookie.com/embed/slOtnjsbff0</data>
+        <data key="value">https://player.vimeo.com/video/2393127</data>
+        <data key="renderedValue">https://player.vimeo.com/video/2393127</data>
     </entity>
     <entity name="PageBuilderVideoUrl_Vimeo_Embedded" type="pagebuilder_video_url_property">
         <data key="name">Video URL</data>

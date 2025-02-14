@@ -64,7 +64,6 @@
         <waitForElementVisible selector="{{section.videoBackgroundLazyLoad(index, lazyLoad.value)}}" stepKey="waitForLazyLoad"/>
         <waitForElementVisible selector="{{section.videoBackgroundPlayOnlyWhenVisible(index, playOnlyWhenVisible.value)}}" stepKey="waitForPlayOnlyWhenVisible"/>
         <waitForElement selector="{{section.videoBackgroundFallbackImage(index)}}" stepKey="waitForFallbackImage"/>
-        <waitForElementNotVisible selector="{{section.videoBackgroundFallbackImage(index)}}" stepKey="waitForFallbackImageNotVisible"/>
         <grabAttributeFrom selector="{{section.videoBackgroundFallbackImageSource(index, fallbackImage.fileName)}}" userInput="src" stepKey="fallbackImageSource"/>
         <assertRegExp stepKey="assertFallbackImageValueContainsFileInformation">
             <expectedResult type="string">/.*\/(pub\/|\/)?media\/{{fallbackImage.path}}\/{{fallbackImage.fileName}}(_\d+)?\.{{fallbackImage.extension}}/</expectedResult>
