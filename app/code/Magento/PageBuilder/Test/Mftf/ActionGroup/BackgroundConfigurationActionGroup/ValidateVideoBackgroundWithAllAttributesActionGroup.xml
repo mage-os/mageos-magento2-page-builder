@@ -14,7 +14,6 @@
         <arguments>
             <argument name="section" defaultValue="RowOnStage"/>
             <argument name="backgroundColor" defaultValue="{{PageBuilderBackgroundColor_Default.rgb}}" type="string"/>
-            <argument name="videoUrl" defaultValue="PageBuilderVideoBackgroundUrl_Empty"/>
             <argument name="overlayColor" defaultValue="{{PageBuilderVideoBackgroundOverlayColor_Empty.rgb}}" type="string"/>
             <argument name="infiniteLoop" defaultValue="PageBuilderVideoBackgroundInfiniteLoop_Enabled"/>
             <argument name="lazyLoad" defaultValue="PageBuilderVideoBackgroundLazyLoad_Enabled"/>

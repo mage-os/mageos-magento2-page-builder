@@ -13,7 +13,6 @@
         </annotations>
         <arguments>
             <argument name="section" defaultValue="RowOnStage"/>
-            <argument name="videoUrl" defaultValue="PageBuilderVideoBackgroundUrl_Empty"/>
             <argument name="infiniteLoop" defaultValue="PageBuilderVideoBackgroundInfiniteLoop_Enabled"/>
             <argument name="lazyLoad" defaultValue="PageBuilderVideoBackgroundLazyLoad_Enabled"/>
             <argument name="playOnlyWhenVisible" defaultValue="PageBuilderVideoBackgroundPlayOnlyWhenVisible_Enabled"/>
