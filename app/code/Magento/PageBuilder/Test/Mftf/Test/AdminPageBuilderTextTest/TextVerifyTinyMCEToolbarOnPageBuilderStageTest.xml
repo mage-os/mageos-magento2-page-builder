@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- /**
-  * Copyright © Magento, Inc. All rights reserved.
-  * See COPYING.txt for license details.
-  */
+/**
+  * Copyright 2025 Adobe
+  * All Rights Reserved.
+ */
 -->
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
     <test name="TextVerifyTinyMCEToolbarOnPageBuilderStageTest">
@@ -17,7 +17,6 @@
             <testCaseId value="MC-3463"/>
             <group value="pagebuilder"/>
             <group value="pagebuilder-text"/>
-            <group value="pr_exclude"/>
         </annotations>
         <before>
             <createData entity="_defaultCmsPage" stepKey="createCMSPage"/>
@@ -52,25 +51,31 @@
         <seeElement selector="{{WYSIWYGOnPageBuilderInline.textColor}}" stepKey="seeTextColor"/>
         <seeElement selector="{{WYSIWYGOnPageBuilderInline.backgroundColor}}" stepKey="seeBackgroundColor"/>
         <!--Verify FontSize-->
-        <comment userInput="Verify FontSize" stepKey="commentVerifyFontSize"/>
-        <click selector="{{WYSIWYGOnPageBuilderInline.fontSize}}" stepKey="clickOnFontSize"/>
-        <see userInput="8pt" stepKey="see8pt"/>
-        <see userInput="10pt" stepKey="see10pt"/>
-        <see userInput="12pt" stepKey="see12pt"/>
-        <see userInput="14pt" stepKey="see14pt"/>
-        <see userInput="18pt" stepKey="see18pt"/>
-        <see userInput="24pt" stepKey="see24pt"/>
-        <see userInput="36pt" stepKey="see36pt"/>
+        <click selector="{{WYSIWYGOnPageBuilderInline.fontSizeMinus}}" stepKey="clickOnFontSizeMinus"/>
+        <waitForElementVisible stepKey="see13px"  selector="{{WYSIWYGOnPageBuilderInline.fontSizeValue('font-size: 13px')}}"/>
+        <click selector="{{WYSIWYGOnPageBuilderInline.fontSizeMinus}}" stepKey="clickOnFontSizeMinusAgain"/>
+        <waitForElementVisible stepKey="see12px" selector="//*[@data-mce-style and contains(@style, 'font-size: 12px')]" />
+        <click selector="{{WYSIWYGOnPageBuilderInline.fontSizePlus}}" stepKey="clickOnFontSizePlus"/>
+        <waitForElementVisible stepKey="see13pxAfterPlus" selector="//*[@data-mce-style and contains(@style, 'font-size: 13px')]" />
+        <click selector="{{WYSIWYGOnPageBuilderInline.fontSizePlus}}" stepKey="clickOnFontSizePlusOne"/>
+        <waitForElementVisible stepKey="see14pxAfterPlus" selector="//*[@data-mce-style and contains(@style, 'font-size: 14px')]" />
+        <click selector="{{WYSIWYGOnPageBuilderInline.fontSizePlus}}" stepKey="clickOnFontSizePlusTwo"/>
+        <waitForElementVisible stepKey="see15pxAfterPlus" selector="//*[@data-mce-style and contains(@style, 'font-size: 15px')]" />
+        <click selector="{{WYSIWYGOnPageBuilderInline.fontSizePlus}}" stepKey="clickOnFontSizePlusThree"/>
+        <waitForElementVisible stepKey="see16pxAfterPlus" selector="//*[@data-mce-style and contains(@style, 'font-size: 16px')]" />
+        <click selector="{{WYSIWYGOnPageBuilderInline.fontSizePlus}}" stepKey="clickOnFontSizePlusFour"/>
+        <waitForElementVisible stepKey="see17pxAfterPlus" selector="//*[@data-mce-style and contains(@style, 'font-size: 17px')]" />
+        <click selector="{{WYSIWYGOnPageBuilderInline.fontSizePlus}}" stepKey="clickOnFontSizePlusFive"/>
+        <waitForElementVisible stepKey="see18pxAfterPlus" selector="//*[@data-mce-style and contains(@style, 'font-size: 18px')]" />
         <!--Verify LineHeight-->
         <comment userInput="Verify LineHeight" stepKey="commentVerifyLineHeight"/>
         <click selector="{{WYSIWYGOnPageBuilderInline.lineHeight}}" stepKey="clickOnLineHeight"/>
-        <see userInput="1" stepKey="seeLineHeight1"/>
-        <see userInput="1.1" stepKey="seeLineHeight11"/>
-        <see userInput="1.2" stepKey="seeLineHeight12"/>
-        <see userInput="1.3" stepKey="seeLineHeight13"/>
-        <see userInput="1.4" stepKey="seeLineHeight14"/>
-        <see userInput="1.5" stepKey="seeLineHeight15"/>
-        <see userInput="2" stepKey="seeLineHeight2"/>
+        <waitForText userInput="1.1" stepKey="seeValue1"/>
+        <waitForText userInput="1.2" stepKey="seeValue2"/>
+        <waitForText userInput="1.3" stepKey="seeValue3"/>
+        <waitForText userInput="1.4" stepKey="seeValue4"/>
+        <waitForText userInput="1.5" stepKey="seeValue5"/>
+        <waitForText userInput="2" stepKey="seeValue6"/>
         <!--Verify FontStyle on preview-->
         <comment userInput="Verify FontStyle on preview" stepKey="commentVerifyFontsizeOnPreview"/>
         <clickWithLeftButton x="10" y="10" selector="{{TextOnStage.tinymce('1')}}" stepKey="focusOnEditorArea"/>

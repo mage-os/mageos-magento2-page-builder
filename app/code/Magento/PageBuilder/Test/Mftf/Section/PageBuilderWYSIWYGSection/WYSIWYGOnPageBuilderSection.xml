@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  /**
-  * Copyright © Magento, Inc. All rights reserved.
-  * See COPYING.txt for license details.
+  * Copyright 2025 Adobe
+  * All Rights Reserved.
   */
 -->
+
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="WYSIWYGOnPageBuilder">
         <element name="undo" type="button" selector=".tox-tinymce:not(.tox-tinymce-inline) button[aria-label='Undo']"/>
         <element name="redo" type="button" selector=".tox-tinymce:not(.tox-tinymce-inline) button[aria-label='Redo']"/>
-        <element name="fontSize" type="button" selector="(//button[@aria-label='Font size 14px'] | //button[@aria-label='Decrease font size'] | //button[@aria-label='Increase font size'])[1]"/>
+        <element name="fontSize" type="button" selector=".tox-tinymce:not(.tox-tinymce-inline) button[aria-label*='font size']:nth-of-type(1)"/>
         <element name="lineHeight" type="button" selector=".mce-tinymce:not(.mce-tinymce-inline) div[aria-label='Line Height']"/>
         <element name="textColor" type="button" selector=".tox-tinymce:not(.tox-tinymce-inline) div[aria-label='Text color Black']"/>
         <element name="backgroundColor" type="button" selector=".tox-tinymce:not(.tox-tinymce-inline) div[aria-label='Background color Black']"/>
