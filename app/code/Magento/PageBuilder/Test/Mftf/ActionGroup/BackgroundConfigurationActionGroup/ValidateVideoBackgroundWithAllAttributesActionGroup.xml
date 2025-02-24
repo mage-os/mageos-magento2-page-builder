@@ -43,7 +43,7 @@
         </assertEquals>
         <wait time="5" stepKey="waitToPreventVideoFlakiness"/>
         <waitForElementVisible selector="{{section.videoBackgroundVideoElement(index)}}" stepKey="waitForVideoVisible"/>
-        <comment userInput="BIC Change for PB Video: {{videoUrl.renderedValue}}" stepKey="waitForVideoUrl"/>
+        <comment userInput="BIC Change for PB Video: {{videoUrl.name}} is encrypted" stepKey="waitForVideoUrl"/>
         <grabAttributeFrom selector="{{section.videoBackgroundJarallaxContainer(index)}}" userInput="style" stepKey="jarallaxStyle"/>
         <assertStringContainsString stepKey="assertHeight">
             <expectedResult type="string">height: 100%;</expectedResult>
