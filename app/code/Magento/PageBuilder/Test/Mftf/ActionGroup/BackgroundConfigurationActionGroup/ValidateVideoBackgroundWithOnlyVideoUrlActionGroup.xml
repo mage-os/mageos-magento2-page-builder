@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  /**
-  * Copyright 2020 Adobe
-  * All rights reserved.
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
   */
 -->
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -13,6 +13,7 @@
         </annotations>
         <arguments>
             <argument name="section" defaultValue="RowOnStage"/>
+            <argument name="videoUrl" defaultValue="PageBuilderVideoBackgroundUrl_Empty"/>
             <argument name="infiniteLoop" defaultValue="PageBuilderVideoBackgroundInfiniteLoop_Enabled"/>
             <argument name="lazyLoad" defaultValue="PageBuilderVideoBackgroundLazyLoad_Enabled"/>
             <argument name="playOnlyWhenVisible" defaultValue="PageBuilderVideoBackgroundPlayOnlyWhenVisible_Enabled"/>
@@ -29,6 +30,7 @@
         <wait time="5" stepKey="waitToPreventVideoFlakiness"/>
 	<scrollToTopOfPage stepKey="scrollToTopToAvoidFlakiness" />
         <waitForElement selector="{{section.videoBackgroundVideoElement(index)}}" stepKey="waitForVideoVisible"/>
+        <waitForElement selector="{{section.videoBackgroundVideoUrl(index, videoUrl.renderedValue)}}" stepKey="waitForVideoUrl"/>
         <grabAttributeFrom selector="{{section.videoBackgroundJarallaxContainer(index)}}" userInput="style" stepKey="jarallaxStyle"/>
         <assertStringContainsString stepKey="assertHeight">
             <expectedResult type="string">height: 100%;</expectedResult>
@@ -48,7 +50,7 @@
             <actualResult type="variable">$videoStyle</actualResult>
         </assertStringContainsString>
         <assertStringContainsString stepKey="assertVideoPlaying">
-            <expectedResult type="string">transform-style: preserve-3d</expectedResult>
+            <expectedResult type="string">transform: translate3d(</expectedResult>
             <actualResult type="variable">$videoStyle</actualResult>
         </assertStringContainsString>
         <dontSeeElementInDOM selector="{{section.videoBackgroundOverlayElement(index)}}" stepKey="dontSeeOverlayColorInDOM"/>
@@ -56,6 +58,7 @@
         <waitForElementVisible selector="{{section.videoBackgroundLazyLoad(index, lazyLoad.value)}}" stepKey="waitForLazyLoad"/>
         <waitForElementVisible selector="{{section.videoBackgroundPlayOnlyWhenVisible(index, playOnlyWhenVisible.value)}}" stepKey="waitForPlayOnlyWhenVisible"/>
         <waitForElement selector="{{section.videoBackgroundNoFallbackImage(index)}}" stepKey="waitForNoFallbackImage"/>
+        <dontSeeElement selector="{{section.videoBackgroundNoFallbackImage(index)}}" stepKey="dontSeeFallbackImage"/>
         <dontSeeElementInDOM selector="{{section.videoBackgroundFallbackImage(index)}}" stepKey="dontSeeFallbackImageInDOM"/>
     </actionGroup>
 </actionGroups>

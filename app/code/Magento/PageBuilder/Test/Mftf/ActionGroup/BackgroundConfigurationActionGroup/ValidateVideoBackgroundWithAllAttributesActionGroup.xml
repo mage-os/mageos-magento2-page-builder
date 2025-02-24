@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  /**
-  * Copyright 2020 Adobe
-  * All rights reserved.
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
   */
 -->
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -14,6 +14,7 @@
         <arguments>
             <argument name="section" defaultValue="RowOnStage"/>
             <argument name="backgroundColor" defaultValue="{{PageBuilderBackgroundColor_Default.rgb}}" type="string"/>
+            <argument name="videoUrl" defaultValue="PageBuilderVideoBackgroundUrl_Empty"/>
             <argument name="overlayColor" defaultValue="{{PageBuilderVideoBackgroundOverlayColor_Empty.rgb}}" type="string"/>
             <argument name="infiniteLoop" defaultValue="PageBuilderVideoBackgroundInfiniteLoop_Enabled"/>
             <argument name="lazyLoad" defaultValue="PageBuilderVideoBackgroundLazyLoad_Enabled"/>
@@ -31,6 +32,7 @@
         </assertEquals>
         <wait time="5" stepKey="waitToPreventVideoFlakiness"/>
         <waitForElementVisible selector="{{section.videoBackgroundVideoElement(index)}}" stepKey="waitForVideoVisible"/>
+        <waitForElement selector="{{section.videoBackgroundVideoUrl(index, videoUrl.renderedValue)}}" stepKey="waitForVideoUrl"/>
         <grabAttributeFrom selector="{{section.videoBackgroundJarallaxContainer(index)}}" userInput="style" stepKey="jarallaxStyle"/>
         <assertStringContainsString stepKey="assertHeight">
             <expectedResult type="string">height: 100%;</expectedResult>
@@ -62,6 +64,7 @@
         <waitForElementVisible selector="{{section.videoBackgroundLazyLoad(index, lazyLoad.value)}}" stepKey="waitForLazyLoad"/>
         <waitForElementVisible selector="{{section.videoBackgroundPlayOnlyWhenVisible(index, playOnlyWhenVisible.value)}}" stepKey="waitForPlayOnlyWhenVisible"/>
         <waitForElement selector="{{section.videoBackgroundFallbackImage(index)}}" stepKey="waitForFallbackImage"/>
+        <waitForElementNotVisible selector="{{section.videoBackgroundFallbackImage(index)}}" stepKey="waitForFallbackImageNotVisible"/>
         <grabAttributeFrom selector="{{section.videoBackgroundFallbackImageSource(index, fallbackImage.fileName)}}" userInput="src" stepKey="fallbackImageSource"/>
         <assertRegExp stepKey="assertFallbackImageValueContainsFileInformation">
             <expectedResult type="string">/.*\/(pub\/|\/)?media\/{{fallbackImage.path}}\/{{fallbackImage.fileName}}(_\d+)?\.{{fallbackImage.extension}}/</expectedResult>
