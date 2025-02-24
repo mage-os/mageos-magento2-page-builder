@@ -52,6 +52,8 @@
             <actionGroup ref="DeleteImageFromStorageActionGroup" stepKey="deleteFallbackImage1">
                 <argument name="Image" value="PageBuilderVideoBackgroundFallbackImage_GIF"/>
             </actionGroup>
+            <comment userInput="BIC Change for PB Video: Image already removed in previous step" stepKey="deleteBackgroundImage2"/>
+            <comment userInput="BIC Change for PB Video: Image already removed in previous step" stepKey="deleteMobileBackgroundImage2"/>
             <actionGroup ref="CliMediaGalleryEnhancedEnableActionGroup" stepKey="disableOldMediaGallery">
                 <argument name="enabled" value="1"/>
             </actionGroup>

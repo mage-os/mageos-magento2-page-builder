@@ -17,6 +17,9 @@
         </arguments>
         <waitForPageLoad stepKey="waitForPageLoad"/>
         <waitForElementVisible selector="{{page.videoElement(index)}}" stepKey="waitForVideoVisible"/>
+        <comment userInput="BIC Change for PB Video: Iframe not available as video URL is changed" stepKey="setIframeId"/>
+        <comment userInput="BIC Change for PB Video: Iframe not available as video URL is changed" stepKey="switchToVideoIframe"/>
         <waitForElementVisible selector="{{page.videoAutoplay(index)}}" stepKey="seeIframePlaying"/>
+        <comment userInput="BIC Change for PB Video: Iframe not available as video URL is changed" stepKey="switchBackFromIframe"/>
     </actionGroup>
 </actionGroups>
