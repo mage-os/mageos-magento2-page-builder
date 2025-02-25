@@ -111,7 +111,7 @@
         </actionGroup>
         <scrollToTopOfPage stepKey="scrollToTopOfPage"/>
         <!-- Stage: Validate Video is not Playing -->
-        <actionGroup ref="validateVideoBackgroundLoadedButNotPlaying" stepKey="validateVideoNotPlayingStage1">
+        <actionGroup ref="ValidateVideoBackgroundLoadedButNotPlayingAlternateActionGroup" stepKey="validateVideoNotPlayingStage1">
             <argument name="section" value="RowOnStage"/>
             <argument name="videoUrl" value="PageBuilderVideoBackgroundUrl_YouTube_NonEmbedded"/>
             <argument name="index" value="4"/>
