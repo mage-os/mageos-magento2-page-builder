@@ -42,9 +42,7 @@
             <argument name="section" value="RowOnStage"/>
             <argument name="index" value="4"/>
         </actionGroup>
-        <actionGroup ref="ScrollToActionGroup" stepKey="scrollToRow4Stage">
-            <argument name="index" value="1"/>
-        </actionGroup>
+        <comment userInput="Do not scroll to video row" stepKey="scrollToRow4Stage"/>
         <actionGroup ref="validateVideoBackgroundNotLoaded" stepKey="validateVideoNotPlayingStage1">
             <argument name="section" value="RowOnStage"/>
             <argument name="index" value="4"/>
