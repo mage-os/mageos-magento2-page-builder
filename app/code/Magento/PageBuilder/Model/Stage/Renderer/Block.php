@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2018 Adobe
+ * All Rights Reserved.
  */
 
 declare(strict_types=1);
@@ -46,7 +46,7 @@ class Block implements \Magento\PageBuilder\Model\Stage\RendererInterface
         \Magento\PageBuilder\Model\Config $config,
         \Magento\Framework\View\Element\BlockFactory $blockFactory,
         ResultFactory $resultFactory,
-        Template $templateFilter = null
+        ?Template $templateFilter = null
     ) {
         $this->config = $config;
         $this->blockFactory = $blockFactory;
@@ -68,9 +68,9 @@ class Block implements \Magento\PageBuilder\Model\Stage\RendererInterface
         ];
 
         $contentTypes = $this->config->getContentTypes();
-        $backendBlockClassName = isset($contentTypes[$params['role']]['backend_block'])
+        $backendBlockClassName = isset($params['role']) && isset($contentTypes[$params['role']]['backend_block'])
             ? $contentTypes[$params['role']]['backend_block'] : false;
-        $backendBlockTemplate = isset($contentTypes[$params['role']]['backend_template'])
+        $backendBlockTemplate = isset($params['role']) && isset($contentTypes[$params['role']]['backend_template'])
             ? $contentTypes[$params['role']]['backend_template'] : false;
 
         if ($backendBlockTemplate) {

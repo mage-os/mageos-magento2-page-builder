@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2020 Adobe
+ * All Rights Reserved.
  */
 declare(strict_types=1);
 
@@ -38,7 +38,7 @@ interface DocumentInterface
      * @param string $value [optional]
      * @return ElementInterface
      */
-    public function createElement(string $name, string $value = null);
+    public function createElement(string $name, ?string $value = null);
 
     /**
      * Returns the first element matching the specified selector.
@@ -62,7 +62,7 @@ interface DocumentInterface
      * @param DOMNode|null $node
      * @return string
      */
-    public function saveHTML(DOMNode $node = null): string;
+    public function saveHTML(?DOMNode $node = null): string;
 
     /**
      * Closes the stream and any underlying resources.
