@@ -1,3 +1,7 @@
+/**
+ * Copyright 2018 Adobe
+ * All Rights Reserved.
+ */
 define([
     'jquery',
     'Magento_Rule/rules',
