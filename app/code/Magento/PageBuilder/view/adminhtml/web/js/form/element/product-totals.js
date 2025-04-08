@@ -69,6 +69,30 @@ define([
         },
 
         /**
+         * Show upload error message
+         */
+        showForbiddenErrorMessage: function () {
+            let bodyObj = $('body');
+
+            bodyObj.notification('clear');
+            bodyObj.notification('add', {
+                error: true,
+                message: $.mage.__(
+                    'Forbidden. You do not have permission to perform this action.'
+                ),
+
+                /**
+                 * @param {String} message
+                 */
+                insertMethod: function (message) {
+                    let $wrapper = $('<div></div>').html(message);
+
+                    $('.page-main-actions').after($wrapper);
+                }
+            });
+        },
+
+        /**
          * Update product count.
          */
         updateProductTotals: _.debounce(function () {
@@ -128,7 +152,13 @@ define([
                 this.loading(false);
             }.bind(this)).fail(function () {
                 if (this.jqXHR.statusText !== 'abort') {
-                    this.value($t('An unknown error occurred. Please try again.'));
+                    if (this.jqXHR.status === 403) {
+                        this.showForbiddenErrorMessage();
+                        $('.save.primary').attr('disabled', true);
+                        $('body').trigger('processStop');
+                    } else {
+                        this.value($t('An unknown error occurred. Please try again.'));
+                    }
                 }
                 this.loading(false);
             }.bind(this));

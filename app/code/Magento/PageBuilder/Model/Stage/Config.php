@@ -223,7 +223,8 @@ class Config
     {
         return [
             'template_save' => $this->authorization->isAllowed(self::TEMPLATE_SAVE_RESOURCE),
-            'template_apply' => $this->authorization->isAllowed(self::TEMPLATE_APPLY_RESOURCE)
+            'template_apply' => $this->authorization->isAllowed(self::TEMPLATE_APPLY_RESOURCE),
+            'widget' => $this->authorization->isAllowed('Magento_Widget::widget_instance')
         ];
     }
 

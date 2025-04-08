@@ -11,8 +11,9 @@ define([
     'Magento_PageBuilder/js/events',
     'Magento_Ui/js/lib/view/utils/dom-observer',
     'Magento_PageBuilder/js/page-builder',
+    'Magento_Ui/js/modal/alert',
     'Magento_Ui/js/lib/view/utils/async'
-], function ($, _, Wysiwyg, $t, events, domObserver, PageBuilder) {
+], function ($, _, Wysiwyg, $t, events, domObserver, PageBuilder, alertDialog) {
     'use strict';
 
     /**
@@ -67,6 +68,20 @@ define([
          * Handle button click, init the Page Builder application
          */
         pageBuilderEditButtonClick: function (context, event) {
+            let aclResource = this.pageBuilder.config?.acl;
+
+            if (
+                aclResource !== undefined &&
+                aclResource.widget === false &&
+                aclResource.template_apply !== true &&
+                aclResource.template_save !== true
+            ) {
+                return alertDialog({
+                    content: $t('Sorry, you need permissions to view this content.'),
+                    title: $t('Permission Error')
+                });
+            }
+
             this.determineIfWithinModal(event.currentTarget);
             this.transition(false);
 
@@ -85,8 +100,8 @@ define([
             if (!this.isComponentInitialized()) {
                 this.loading(true);
                 this.pageBuilder = new PageBuilder(
-                  this.wysiwygConfigData(),
-                  this.initialValue
+                    this.wysiwygConfigData(),
+                    this.initialValue
                 );
                 if (!this.source.get('pageBuilderInstances')) {
                     this.source.set('pageBuilderInstances', []);
