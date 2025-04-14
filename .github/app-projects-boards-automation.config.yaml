@@ -306,11 +306,5 @@ automations:
 
 
   ############################################################################################################
-  # Issues Automation                                                                                        #
+  # Automation Rules related to issues goes here                                                             #
   ############################################################################################################
-  # 1. Whenever a new issue is created and has no priority label on it (e.g., P1, P2, etc.):
-  #   a. it must be added to the "Issues Confirmation and Triage Board" project
-  #   b. it must be moved to the "Ready for confirmation" column on the board
-  #   c. it must be labeled with the "Issue: ready for confirmation" label
-  #   d. the below labels must be removed from the issue:
-  #     - "feature request"
