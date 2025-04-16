@@ -70,12 +70,7 @@ define([
         pageBuilderEditButtonClick: function (context, event) {
             let aclResource = this.pageBuilder.config?.acl;
 
-            if (
-                aclResource !== undefined &&
-                aclResource.widget === false &&
-                aclResource.template_apply !== true &&
-                aclResource.template_save !== true
-            ) {
+            if (aclResource !== undefined && aclResource.widget === false) {
                 return alertDialog({
                     content: $t('Sorry, you need permissions to view this content.'),
                     title: $t('Permission Error')
