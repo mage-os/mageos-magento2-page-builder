@@ -1,7 +1,7 @@
 /**
-* Copyright 2024 Adobe
-* All Rights Reserved.
-*/
+ * Copyright 2024 Adobe
+ * All Rights Reserved.
+ */
 
 define([
     'Magento_PageBuilder/js/form/provider',
