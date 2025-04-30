@@ -8,9 +8,6 @@ declare(strict_types=1);
 
 namespace Magento\TestModulePageBuilderExtensionPoints\Model\Stage\Renderer;
 
-/**
- * Class Test
- */
 class Test implements \Magento\PageBuilder\Model\Stage\RendererInterface
 {
     /**

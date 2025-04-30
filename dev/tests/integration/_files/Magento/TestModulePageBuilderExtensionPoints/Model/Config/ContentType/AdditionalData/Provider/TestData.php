@@ -10,9 +10,6 @@ namespace Magento\TestModulePageBuilderExtensionPoints\Model\Config\ContentType\
 
 use Magento\PageBuilder\Model\Config\ContentType\AdditionalData\ProviderInterface;
 
-/**
- * Class TestData
- */
 class TestData implements ProviderInterface
 {
     public function getData(string $itemName) : array

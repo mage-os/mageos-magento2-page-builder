@@ -10,9 +10,9 @@ namespace Magento\PageBuilder\Api;
 
 class ProductAttributeRepositoryTest extends \Magento\TestFramework\TestCase\WebapiAbstract
 {
-    const SERVICE_NAME = 'catalogProductAttributeRepositoryV1';
-    const SERVICE_VERSION = 'V1';
-    const RESOURCE_PATH = '/V1/products/attributes';
+    public const SERVICE_NAME = 'catalogProductAttributeRepositoryV1';
+    public const SERVICE_VERSION = 'V1';
+    public const RESOURCE_PATH = '/V1/products/attributes';
 
     public function testCreatePageBuilderAttribute()
     {
