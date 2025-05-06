@@ -25,27 +25,22 @@ define(['underscore'], function (_) {
             }
 
             switch (name) {
-                case 'contentType:duplicateAfter':
+            case 'contentType:duplicateAfter':
                     action = 'duplicate';
                 break;
-
-                case 'contentType:removeAfter':
+            case 'contentType:removeAfter':
                     action = 'remove';
                 break;
-
-                case 'contentType:createAfter':
+            case 'contentType:createAfter':
                     action = 'create';
                 break;
-
-                case 'contentType:editBefore':
+            case 'contentType:editBefore':
                     action = 'edit';
                 break;
-
-                case 'contentType:visibilityAfter':
+            case 'contentType:visibilityAfter':
                     action = args.visibility ? 'show' : 'hide';
                 break;
-
-                default:
+            default:
                 break;
             }
 

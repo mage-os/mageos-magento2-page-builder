@@ -39,10 +39,7 @@ require('dts-generator').default({
                 path.resolve(
                     path.dirname(params.currentModuleId),
                     params.importedModuleId,
-                ).replace(
-                    process.cwd() + '/',
-                    ''
-                )
+                ).replace(process.cwd() + '/', '')
             );
         }
 

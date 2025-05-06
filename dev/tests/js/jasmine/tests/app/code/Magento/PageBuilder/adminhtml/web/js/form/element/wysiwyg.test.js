@@ -75,7 +75,7 @@ define([
         try {
             injector.clean();
             injector.remove();
-        } catch {}
+        } catch (e) { console.log(e); }
     });
 
     describe('Magento_PageBuilder/js/form/element/wysiwyg', function () {
