@@ -26,19 +26,19 @@ define(['underscore'], function (_) {
 
             switch (name) {
             case 'contentType:duplicateAfter':
-                    action = 'duplicate';
+                action = 'duplicate';
                 break;
             case 'contentType:removeAfter':
-                    action = 'remove';
+                action = 'remove';
                 break;
             case 'contentType:createAfter':
-                    action = 'create';
+                action = 'create';
                 break;
             case 'contentType:editBefore':
-                    action = 'edit';
+                action = 'edit';
                 break;
             case 'contentType:visibilityAfter':
-                    action = args.visibility ? 'show' : 'hide';
+                action = args.visibility ? 'show' : 'hide';
                 break;
             default:
                 break;
