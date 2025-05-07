@@ -38,7 +38,7 @@ require('dts-generator').default({
             return resolveModuleIdToMagentoPath(
                 path.resolve(
                     path.dirname(params.currentModuleId),
-                    params.importedModuleId, // eslint-disable-next-line prefer-template
+                    params.importedModuleId
                 ).replace(
                     process.cwd() + '/',
                     ''

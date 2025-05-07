@@ -70,6 +70,7 @@ define([
                 })
             });
 
+            // eslint-disable-next-line one-var
             const result = instance.save();
 
             expect(events.trigger).toHaveBeenCalledWith('form:' + instance.id + ':saveAfter', instance.get('data'));
