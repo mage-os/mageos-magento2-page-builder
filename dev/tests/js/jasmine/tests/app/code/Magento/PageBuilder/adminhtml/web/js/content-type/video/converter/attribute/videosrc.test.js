@@ -8,7 +8,7 @@ define([
     'jquery',
     'Magento_PageBuilder/js/content-type/video/converter/attribute/videosrc'
 ], function ($, VideoSrc) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     describe('Magento_PageBuilder/js/content-type/video/converter/attribute/videosrc', function () {
         var model;

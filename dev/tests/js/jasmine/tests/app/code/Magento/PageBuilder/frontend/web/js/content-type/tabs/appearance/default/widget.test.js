@@ -6,7 +6,7 @@ define([
     'Magento_PageBuilder/js/content-type/tabs/appearance/default/widget',
     'jquery'
 ], function (tabsInitializerWidget, $) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     describe('Magento_PageBuilder/js/content-type/tabs/appearance/default/widget', function () {
         it('Should call $.ui.tabs with active based on element\'s activeTab data', function () {

@@ -8,7 +8,7 @@ define([
     'jquery',
     'squire'
 ], function ($, Squire) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     var uploader,
         modifierClassSet1 = {

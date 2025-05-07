@@ -7,7 +7,7 @@
 define([
     'Magento_PageBuilder/js/form/element/html'
 ], function (HtmlUiElement) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     describe('Magento_PageBuilder/js/form/element/html', function () {
         var model,

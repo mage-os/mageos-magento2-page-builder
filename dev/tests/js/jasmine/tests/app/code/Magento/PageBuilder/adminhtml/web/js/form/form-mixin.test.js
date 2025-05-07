@@ -9,7 +9,7 @@ define([
     'Magento_PageBuilder/js/events',
     'squire'
 ], function ($, events, Squire) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     var form,
         PageBuilderFactoryMock,
@@ -57,8 +57,8 @@ define([
         try {
             injector.clean();
             injector.remove();
-        } catch (e) {
-        }
+            // eslint-disable-next-line no-unused-vars
+        } catch (e) {}
     });
 
     describe('Magento_PageBuilder/js/form/form-mixin', function () {

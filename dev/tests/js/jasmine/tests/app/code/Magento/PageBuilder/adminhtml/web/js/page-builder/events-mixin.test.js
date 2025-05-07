@@ -7,7 +7,7 @@
 define([
     'squire'
 ], function (Squire) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     var injector = new Squire(),
         eventObject = {
@@ -46,6 +46,7 @@ define([
             injector.clean();
             injector.remove();
             window._satellite = origSatellite;
+            // eslint-disable-next-line no-unused-vars
         } catch (e) {
         }
     });

@@ -7,7 +7,7 @@ define([
     'Magento_PageBuilder/js/events',
     'jquery'
 ], function (sliderWidgetInitializer, uiEvents, $) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     describe('Magento_PageBuilder/js/content-type/slider/appearance/default/widget', function () {
         var el;

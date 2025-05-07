@@ -7,7 +7,7 @@
 define([
     'squire'
 ], function (Squire) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     var $,
         wysiwyg,

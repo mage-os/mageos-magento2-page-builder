@@ -4,7 +4,7 @@
  */
 
 define(['underscore'], function (_) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     return {
 

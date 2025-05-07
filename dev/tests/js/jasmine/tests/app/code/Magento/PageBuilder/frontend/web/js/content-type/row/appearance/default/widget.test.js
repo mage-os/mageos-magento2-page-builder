@@ -5,7 +5,7 @@
 define([
     'Magento_PageBuilder/js/content-type/row/appearance/default/widget'
 ], function (rowWidgetInitializer) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     describe('Magento_PageBuilder/js/content-type/row/appearance/default/widget', function () {
         it('Should not call jarallax if enableParallax !== 1', function () {

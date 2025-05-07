@@ -9,7 +9,7 @@ define([
     'jquery',
     'Magento_PageBuilder/js/content-type/products/mass-converter/widget-directive'
 ], function ($, WidgetDirective) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     describe('Magento_PageBuilder/js/content-type/products/mass-converter/widget-directive', function () {
         var model;

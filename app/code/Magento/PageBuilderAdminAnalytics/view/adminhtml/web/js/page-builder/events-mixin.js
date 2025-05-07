@@ -5,7 +5,7 @@
 
 define(['underscore', 'Magento_PageBuilderAdminAnalytics/js/page-builder/event-builder'],
     function (_, EventBuilder) {
-        'use strict';
+        'use strict'; // eslint-disable-line strict
 
         return function (target) {
             var originalTarget = target.trigger,

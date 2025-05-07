@@ -6,7 +6,7 @@ define([
     'Magento_PageBuilder/js/widget/show-on-hover',
     'jquery'
 ], function (showOnHoverInitializerWidget, $) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     var el;
 

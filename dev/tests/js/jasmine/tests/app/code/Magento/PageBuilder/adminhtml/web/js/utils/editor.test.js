@@ -9,7 +9,7 @@ define([
     'jquery',
     'Magento_PageBuilder/js/config'
 ], function (utils, $, Config) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     describe('Magento_PageBuilder/js/utils/editor.js', function () {
         describe('lockImageSize', function () {

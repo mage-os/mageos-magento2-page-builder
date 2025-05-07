@@ -6,7 +6,7 @@ define([
     'squire',
     'jquery'
 ], function (Squire, $) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     var mapWidgetInitializer,
         injector = new Squire(),

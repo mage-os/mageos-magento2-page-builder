@@ -7,7 +7,7 @@
 define([
     'Magento_PageBuilder/js/form/provider/conditions-data-processor'
 ], function (processor) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     describe('Magento_PageBuilder/js/form/provider/conditions-data-processor', function () {
         it('Should delete and then normalize the data to the specified attribute', function () {

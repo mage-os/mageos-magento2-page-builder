@@ -6,7 +6,7 @@ define([
     'Magento_PageBuilder/js/content-type/products/appearance/carousel/widget',
     'jquery'
 ], function (sliderWidgetInitializer, $) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     describe('Magento_PageBuilder/js/content-type/products/appearance/carousel/widget', function () {
         var config = {

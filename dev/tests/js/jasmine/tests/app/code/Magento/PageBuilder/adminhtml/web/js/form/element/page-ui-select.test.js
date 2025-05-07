@@ -9,7 +9,7 @@ define([
     'Magento_PageBuilder/js/form/element/page-ui-select',
     'ko'
 ], function ($, PageUiSelect, ko) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     describe('Magento_PageBuilder/js/form/element/page-ui-select', function () {
         var model;
