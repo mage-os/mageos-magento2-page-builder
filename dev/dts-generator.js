@@ -68,6 +68,7 @@ require('dts-generator').default({
                 .replace(/.*\/\*\*\n.*@api.*\n.*\*\//gm, ''); // Strip all @api comments
 
             modifiedContents = `${copyrightComment}\n${modifiedContents}`;
+            // eslint-disable-next-line max-nested-callbacks
             fs.writeFile(typesFile, prettier.format(modifiedContents, {parser: 'typescript'}), null, () => {
                 console.log('Type definition generation completed.');
                 process.exit();
