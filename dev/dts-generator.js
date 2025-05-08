@@ -5,9 +5,9 @@
 
 const path = require('path');
 const fs = require('fs');
-const prettier = require('prettier');
-const typesFile = 'page-builder-types/index.d.ts';
-const copyrightComment = `/**
+const prettier = require('prettier'),
+    typesFile = 'page-builder-types/index.d.ts',
+    copyrightComment = `/**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */`;
@@ -18,6 +18,7 @@ const copyrightComment = `/**
  * @param {string} currentModuleId
  * @returns {string}
  */
+// eslint-disable-next-line strict
 function resolveModuleIdToMagentoPath(currentModuleId) {
     return currentModuleId.replace(
         'app/code/Magento/PageBuilder/view/adminhtml/web/ts/',
@@ -29,9 +30,11 @@ function resolveModuleIdToMagentoPath(currentModuleId) {
 require('dts-generator').default({
     project: './',
     out: typesFile,
+    // eslint-disable-next-line strict
     resolveModuleId: (params) => {
         return resolveModuleIdToMagentoPath(params.currentModuleId);
     },
+    // eslint-disable-next-line strict
     resolveModuleImport: (params) => {
         // Convert relative imports into their Magento counterparts
         if (params.importedModuleId.startsWith('../') || params.importedModuleId.startsWith('./')) {
@@ -48,11 +51,13 @@ require('dts-generator').default({
 
         return params.importedModuleId;
     }
+// eslint-disable-next-line strict
 }).then(() => {
-    const { exec } = require('child_process');
-    // Lint the generated file
-    const lint = exec(`./node_modules/tslint/bin/tslint --fix ${typesFile}`);
-    lint.on("exit", () => {
+    const { exec } = require('child_process'),
+        // Lint the generated file
+        lint = exec(`./node_modules/tslint/bin/tslint --fix ${typesFile}`);
+
+    lint.on('exit', () => {
         // Replace all tab characters with 4 spaces
         fs.readFile(typesFile, 'utf-8', (error, contents) => {
             if (error) {
@@ -61,9 +66,10 @@ require('dts-generator').default({
             let modifiedContents = contents
                 .replace(/.*\/\*\*\n.*Copyright © Magento.*\n.*\n.*\*\//gm, '') // Strip all Magento copyright
                 .replace(/.*\/\*\*\n.*@api.*\n.*\*\//gm, ''); // Strip all @api comments
+
             modifiedContents = `${copyrightComment}\n${modifiedContents}`;
-            fs.writeFile(typesFile, prettier.format(modifiedContents, {parser: "typescript"}), null, () => {
-                console.log("Type definition generation completed.");
+            fs.writeFile(typesFile, prettier.format(modifiedContents, {parser: 'typescript'}), null, () => {
+                console.log('Type definition generation completed.');
                 process.exit();
             });
         });
