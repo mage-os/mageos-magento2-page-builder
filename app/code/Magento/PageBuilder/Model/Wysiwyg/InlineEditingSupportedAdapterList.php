@@ -37,6 +37,7 @@ class InlineEditingSupportedAdapterList
 
     /**
      * Check if inline editing available for current adapter
+     *
      * @param string $editorPath
      * @return bool
      */

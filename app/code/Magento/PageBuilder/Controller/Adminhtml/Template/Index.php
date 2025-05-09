@@ -20,7 +20,7 @@ use Magento\Framework\Controller\Result\ForwardFactory;
  */
 class Index extends Action implements HttpGetActionInterface
 {
-    const ADMIN_RESOURCE = 'Magento_PageBuilder::templates';
+    public const ADMIN_RESOURCE = 'Magento_PageBuilder::templates';
 
     /**
      * @var PageFactory

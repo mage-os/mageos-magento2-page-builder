@@ -25,7 +25,8 @@ class State
 
     /**
      * Returns information if use page builder based on system configuration and xml configuration
-     * @param $isPageBuilderUsed
+     *
+     * @param mixed $isPageBuilderUsed
      * @return bool
      */
     public function isPageBuilderInUse($isPageBuilderUsed) : bool

@@ -35,6 +35,7 @@ class TemplateTypes implements OptionSourceInterface
     public function toOptionArray()
     {
         $templateTypes = $this->config->getConfig()['stage_config']['template_types'];
+        $options = [];
         foreach ($templateTypes as $key => $value) {
             $options[] = [
                 'label' => $value,

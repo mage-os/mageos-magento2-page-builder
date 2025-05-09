@@ -12,6 +12,7 @@ use Magento\Rule\Model\Condition\Combine;
 
 /**
  * Responsible for rendering the top-level conditions rule tree using the provided params
+ * @SuppressWarnings(PHPMD.AllPurposeAction)
  */
 class ProductConditions extends \Magento\CatalogWidget\Controller\Adminhtml\Product\Widget
 {
@@ -41,7 +42,7 @@ class ProductConditions extends \Magento\CatalogWidget\Controller\Adminhtml\Prod
     }
 
     /**
-     * @return void
+     * @inheritDoc
      */
     public function execute()
     {

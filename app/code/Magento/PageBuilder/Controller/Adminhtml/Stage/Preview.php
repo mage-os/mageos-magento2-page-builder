@@ -16,7 +16,7 @@ use Magento\Framework\App\Action\HttpPostActionInterface;
  */
 class Preview extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
-    const ADMIN_RESOURCE = 'Magento_Backend::content';
+    public const ADMIN_RESOURCE = 'Magento_Backend::content';
 
     /**
      * @var \Magento\PageBuilder\Model\Stage\RendererPool

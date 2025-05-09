@@ -15,8 +15,8 @@ use Magento\Framework\ObjectManager\Config\Mapper\ArgumentParser;
  */
 class Converter implements \Magento\Framework\Config\ConverterInterface
 {
-    const DEFAULT_ATTRIBUTE_READER = 'Magento_PageBuilder/js/property/attribute-reader';
-    const DEFAULT_PROPERTY_READER = 'Magento_PageBuilder/js/property/style-property-reader';
+    public const DEFAULT_ATTRIBUTE_READER = 'Magento_PageBuilder/js/property/attribute-reader';
+    public const DEFAULT_PROPERTY_READER = 'Magento_PageBuilder/js/property/style-property-reader';
 
     /**
      * @var ArgumentParser
@@ -25,6 +25,7 @@ class Converter implements \Magento\Framework\Config\ConverterInterface
 
     /**
      * Converter constructor.
+     *
      * @param ArgumentParser $parser
      */
     public function __construct(
@@ -529,6 +530,7 @@ class Converter implements \Magento\Framework\Config\ConverterInterface
         array $types,
         array $allowedParentsData
     ): array {
+        $baseAllowedTypes = $types;
         foreach ($parentChildData as $key => $value) {
             $parent = $value['parents'] ?? [];
 
@@ -542,7 +544,7 @@ class Converter implements \Magento\Framework\Config\ConverterInterface
             if ($parent['defaultPolicy'] === 'deny') {
                 $allowedParents = $allowedTypes;
             } else {
-                $allowedParents = array_merge($types, $allowedTypes);
+                $allowedParents = [...$baseAllowedTypes, ...$allowedTypes];
                 foreach ($deniedTypes as $type) {
                     $allowedParents = $this->removeDataInArray($type, $allowedParents);
                 }

@@ -18,6 +18,9 @@ use Magento\PageBuilder\Model\ResourceModel\Template as ResourceTemplate;
  */
 class Template extends AbstractExtensibleModel implements TemplateInterface
 {
+    /**
+     * @var string
+     */
     protected $_eventPrefix = 'pagebuilder_template';
 
     /**

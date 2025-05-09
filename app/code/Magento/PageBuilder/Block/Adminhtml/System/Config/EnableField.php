@@ -36,7 +36,7 @@ class EnableField extends \Magento\Config\Block\System\Config\Form\Field
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     protected function _getElementHtml(AbstractElement $element)
     {

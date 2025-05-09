@@ -14,9 +14,9 @@ use Magento\Framework\DataObject;
  */
 class Attributes extends \Magento\Catalog\Block\Product\View\Attributes
 {
-    const DISPLAY_ATTRIBUTES_NON_PAGEBUILDER = 'non_pagebuilder';
+    public const DISPLAY_ATTRIBUTES_NON_PAGEBUILDER = 'non_pagebuilder';
 
-    const DISPLAY_ATTRIBUTES_PAGEBUILDER_ONLY = 'pagebuilder_only';
+    public const DISPLAY_ATTRIBUTES_PAGEBUILDER_ONLY = 'pagebuilder_only';
 
     /**
      * @inheritdoc

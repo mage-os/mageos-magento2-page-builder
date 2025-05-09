@@ -10,12 +10,15 @@ namespace Magento\PageBuilder\Controller\Adminhtml\ContentType\Block;
 
 use Magento\Framework\Controller\ResultFactory;
 
+/**
+ * @SuppressWarnings(PHPMD.AllPurposeAction)
+ */
 class Metadata extends \Magento\Backend\App\AbstractAction
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
-    const ADMIN_RESOURCE = 'Magento_Cms::block';
+    public const ADMIN_RESOURCE = 'Magento_Cms::block';
 
     /**
      * @var \Magento\Cms\Model\ResourceModel\Block\CollectionFactory
@@ -36,6 +39,9 @@ class Metadata extends \Magento\Backend\App\AbstractAction
         $this->blockCollectionFactory = $blockCollectionFactory;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function execute()
     {
         $params = $this->getRequest()->getParams();

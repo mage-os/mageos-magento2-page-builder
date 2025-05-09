@@ -24,7 +24,7 @@ class CloseButton implements ButtonProviderInterface
     /**
      * Constructor
      *
-     * @param $targetName
+     * @param string $targetName
      */
     public function __construct(string $targetName)
     {

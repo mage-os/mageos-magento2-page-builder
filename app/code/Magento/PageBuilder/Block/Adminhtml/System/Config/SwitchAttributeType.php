@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Magento\PageBuilder\Block\Adminhtml\System\Config;
 
-use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Phrase;
 
@@ -19,17 +18,6 @@ use Magento\Framework\Phrase;
  */
 class SwitchAttributeType extends Field
 {
-    /**
-     * @param Context $context
-     * @param array $data
-     */
-    public function __construct(
-        Context $context,
-        array $data = []
-    ) {
-        parent::__construct($context, $data);
-    }
-
     /**
      * Get text for the modal title heading when user switches to disable
      *

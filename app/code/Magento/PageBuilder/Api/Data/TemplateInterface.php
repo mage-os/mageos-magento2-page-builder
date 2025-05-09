@@ -15,19 +15,19 @@ use Magento\Framework\Api\ExtensibleDataInterface;
  */
 interface TemplateInterface extends ExtensibleDataInterface
 {
-    const KEY_ID = 'template_id';
+    public const KEY_ID = 'template_id';
 
-    const KEY_NAME = 'name';
+    public const KEY_NAME = 'name';
 
-    const KEY_PREVIEW_IMAGE = 'preview_image';
+    public const KEY_PREVIEW_IMAGE = 'preview_image';
 
-    const KEY_TEMPLATE = 'template';
+    public const KEY_TEMPLATE = 'template';
 
-    const KEY_CREATED_FOR = 'created_for';
+    public const KEY_CREATED_FOR = 'created_for';
 
-    const KEY_CREATED_AT = 'created_at';
+    public const KEY_CREATED_AT = 'created_at';
 
-    const KEY_UPDATED_AT = 'updated_at';
+    public const KEY_UPDATED_AT = 'updated_at';
 
     /**
      * Get Template ID

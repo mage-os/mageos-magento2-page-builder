@@ -15,7 +15,7 @@ namespace Magento\PageBuilder\Block\Element;
 class Editor extends \Magento\Framework\Data\Form\Element\Editor
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getElementHtml()
     {
@@ -27,7 +27,7 @@ class Editor extends \Magento\Framework\Data\Form\Element\Editor
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function isEnabled()
     {
@@ -48,7 +48,7 @@ class Editor extends \Magento\Framework\Data\Form\Element\Editor
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     protected function getInlineJs($jsSetupObject, $forceLoad)
     {

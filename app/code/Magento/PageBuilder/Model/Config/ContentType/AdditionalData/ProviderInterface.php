@@ -17,6 +17,7 @@ interface ProviderInterface
 {
     /**
      * Get data from the provider
+     *
      * @param string $itemName - the name of the item to use as key in returned array
      * @return array
      */

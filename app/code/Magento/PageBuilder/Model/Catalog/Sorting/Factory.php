@@ -8,9 +8,6 @@ declare(strict_types=1);
 
 namespace Magento\PageBuilder\Model\Catalog\Sorting;
 
-/**
- * Class Factory
- */
 class Factory
 {
     /**
