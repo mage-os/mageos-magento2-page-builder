@@ -43,7 +43,6 @@ class ProductConditions extends \Magento\CatalogWidget\Controller\Adminhtml\Prod
 
     /**
      * @inheritDoc
-     * @SuppressWarnings(PHPMD.AllPurposeAction)
      */
     public function execute()
     {
@@ -60,7 +59,7 @@ class ProductConditions extends \Magento\CatalogWidget\Controller\Adminhtml\Prod
         // The Combine class doesn't need the data attribute on children but we do.
         $this->configureConditionsFormName($conditions, $formName);
         $result = $conditions->asHtmlRecursive();
-        $this->getResponse()->setBody($result);
+        return $this->getResponse()->setBody($result);
     }
 
     /**
