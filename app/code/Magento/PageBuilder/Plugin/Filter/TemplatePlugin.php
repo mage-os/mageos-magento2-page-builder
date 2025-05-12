@@ -15,9 +15,9 @@ use Magento\Framework\Filter\Template as FrameworkTemplateFilter;
  */
 class TemplatePlugin
 {
-    const BACKGROUND_IMAGE_PATTERN = '/data-background-images=(?:\'|"){.+}(?:\'|")/si';
+    public const BACKGROUND_IMAGE_PATTERN = '/data-background-images=(?:\'|"){.+}(?:\'|")/si';
 
-    const HTML_CONTENT_TYPE_PATTERN = '/data-content-type="html"/si';
+    public const HTML_CONTENT_TYPE_PATTERN = '/data-content-type="html"/si';
 
     /**
      * @var TemplateFilter

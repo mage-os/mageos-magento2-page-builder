@@ -18,9 +18,9 @@ use Magento\Framework\UrlInterface;
  */
 class PreviewImage extends Column
 {
-    const NAME = 'preview_image';
+    public const NAME = 'preview_image';
 
-    const ALT_FIELD = 'name';
+    public const ALT_FIELD = 'name';
 
     /**
      * @var UrlInterface

@@ -25,7 +25,7 @@ class Page implements \Magento\Ui\Model\UrlInput\ConfigInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getConfig(): array
     {

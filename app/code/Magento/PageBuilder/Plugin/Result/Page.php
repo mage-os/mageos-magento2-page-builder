@@ -14,6 +14,8 @@ use Magento\Framework\View\Result\Page as ResultPage;
 class Page
 {
     /**
+     * Adjusts the layout handles classes to the body when using full width variants
+     *
      * @param ResultPage $subject
      * @param ResponseInterface $response
      * @return array
