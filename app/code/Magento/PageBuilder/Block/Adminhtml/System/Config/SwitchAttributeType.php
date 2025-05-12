@@ -19,6 +19,18 @@ use Magento\Framework\Phrase;
 class SwitchAttributeType extends Field
 {
     /**
+     * @param Context $context
+     * @param array $data
+     * phpcs:disable Generic.CodeAnalysis.UselessOverridingMethod.Found
+     */
+    public function __construct(
+        Context $context,
+        array $data = []
+    ) {
+        parent::__construct($context, $data);
+    }
+
+    /**
      * Get text for the modal title heading when user switches to disable
      *
      * @return string
