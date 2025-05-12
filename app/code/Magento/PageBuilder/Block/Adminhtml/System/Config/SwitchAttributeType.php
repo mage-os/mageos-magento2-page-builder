@@ -10,6 +10,7 @@ namespace Magento\PageBuilder\Block\Adminhtml\System\Config;
 
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Phrase;
+use Magento\Backend\Block\Template\Context;
 
 /**
  * Class SwitchAttributeType renders modal window to confirm changing attribute type
