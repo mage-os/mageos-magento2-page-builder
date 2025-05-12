@@ -43,6 +43,7 @@ class ProductConditions extends \Magento\CatalogWidget\Controller\Adminhtml\Prod
 
     /**
      * @inheritDoc
+     * @SuppressWarnings(PHPMD.AllPurposeAction)
      */
     public function execute()
     {

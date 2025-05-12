@@ -22,7 +22,7 @@ use Psr\Log\LoggerInterface;
  */
 class Delete extends Action implements HttpPostActionInterface
 {
-    const ADMIN_RESOURCE = 'Magento_PageBuilder::template_delete';
+    public const ADMIN_RESOURCE = 'Magento_PageBuilder::template_delete';
 
     /**
      * @var LoggerInterface
