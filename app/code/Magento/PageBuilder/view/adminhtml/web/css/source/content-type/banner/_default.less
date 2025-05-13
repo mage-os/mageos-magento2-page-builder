@@ -136,16 +136,18 @@
 //
 //  Default appearance styles rendered through Block only
 //  _____________________________________________________
-
+/**
+ * @codingStandardsIgnoreStart
+ */
 [data-content-type='banner'] {
     .pagebuilder-banner-wrapper {
         overflow-wrap: break-word;
         word-wrap: break-word;
-        //  @codingStandardsIgnoreStart
+
         .pagebuilder-overlay:not(.pagebuilder-poster-overlay) {
             max-width: 540px;
         }
-        //  @codingStandardsIgnoreEnd
+
         [data-element='content'] {
             min-height: 50px;
         }
@@ -166,3 +168,4 @@
         }
     }
 }
+//  @codeCoverageIgnoreEnd
