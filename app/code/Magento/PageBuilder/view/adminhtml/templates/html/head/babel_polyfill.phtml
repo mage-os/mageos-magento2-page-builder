@@ -5,8 +5,9 @@
  */
 
 /* @var $block \Magento\PageBuilder\Block\Adminhtml\Html\Head\BabelPolyfill */
+/** @var $escaper \Magento\Framework\Escaper */
 
 if ($block->shouldLoadPolyfill()) : ?>
-<script src="<?= $block->escapeUrl($block->getJsUrl()) ?>"></script>
+<script src="<?= $escaper->escapeUrl($block->getJsUrl()) ?>"></script>
 <?php endif; ?>
 
