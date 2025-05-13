@@ -12,7 +12,7 @@ $id = $block->getData('formNamespace') . '_' . $attribute;
 $role = 'pagebuilder-conditions-form-placeholder-' . $attribute;
 ?>
 <label class="admin__field-label">
-    <span><?= $block->escapeHtml($block->getData('label')) ?></span>
+    <span><?= $escaper->escapeHtml($block->getData('label')) ?></span>
 </label>
 <div class="admin__field-control">
     <div class="rule-tree">
