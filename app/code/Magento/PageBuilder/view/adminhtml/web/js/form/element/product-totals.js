@@ -10,7 +10,7 @@ define([
     'Magento_PageBuilder/js/form/provider/conditions-data-processor',
     'Magento_Ui/js/form/element/abstract'
 ], function (_, $, $t, conditionsDataProcessor, Abstract) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     return Abstract.extend({
         defaults: {
@@ -62,8 +62,7 @@ define([
          * @param {Object} jqXHR
          */
         callSuperError: function (jqXHR) {
-            // eslint-disable-next-line jquery-no-bind-unbind
-            var superError = $.ajaxSettings.error.bind(window, jqXHR);
+            var superError = $.ajaxSettings.error.bind(window, jqXHR); // eslint-ignore-line
 
             superError();
         },

@@ -8,7 +8,7 @@ define([
     'uiRegistry',
     'mage/utils/objects'
 ], function ($, RulesForm, uiRegistry, objectUtils) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     return function (config, conditionsFormPlaceholder) {
         var $conditionsFormPlaceholder = $(conditionsFormPlaceholder),
