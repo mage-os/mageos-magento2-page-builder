@@ -68,9 +68,7 @@ define([
          * Handle button click, init the Page Builder application
          */
         pageBuilderEditButtonClick: function (context, event) {
-            /* eslint-disable */
-            let aclResource = this.pageBuilder.config?.acl;
-            /* eslint-enable */
+            let aclResource = this.pageBuilder.config && this.pageBuilder.config.acl;
 
             if (aclResource !== undefined && aclResource.widget === false) {
                 return alertDialog({
