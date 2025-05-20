@@ -14,7 +14,7 @@ define([
     'Magento_Ui/js/modal/alert',
     'Magento_Ui/js/lib/view/utils/async'
 ], function ($, _, Wysiwyg, $t, events, domObserver, PageBuilder, alertDialog) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     /**
      * Extend the original WYSIWYG with added PageBuilder functionality
