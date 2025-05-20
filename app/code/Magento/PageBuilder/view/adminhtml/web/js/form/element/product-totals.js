@@ -62,7 +62,9 @@ define([
          * @param {Object} jqXHR
          */
         callSuperError: function (jqXHR) {
-            var superError = $.ajaxSettings.error.bind(window, jqXHR); // eslint-ignore-line
+            /* eslint-disable */
+            var superError = $.ajaxSettings.error.bind(window, jqXHR);
+            /* eslint-enable */
 
             superError();
         },
