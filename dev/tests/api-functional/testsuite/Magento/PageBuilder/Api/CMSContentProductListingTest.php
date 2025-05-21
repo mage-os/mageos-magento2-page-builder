@@ -14,11 +14,10 @@ use Magento\Cms\Model\PageRepository;
 use Magento\Framework\Api\SearchCriteriaBuilder;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\ObjectManagerInterface;
-use Magento\GraphQl\Service\GraphQlRequest;
 use Magento\TestFramework\Helper\Bootstrap;
 use Magento\TestFramework\TestCase\GraphQlAbstract;
 
-class CMSContentProductListing extends GraphQlAbstract
+class CMSContentProductListingTest extends GraphQlAbstract
 {
     /**
      * @var ObjectManagerInterface
@@ -52,12 +51,14 @@ class CMSContentProductListing extends GraphQlAbstract
     }
 
     /**
+     * Check if product listing is sorted by position
+     *
      * @magentoDataFixture Magento/Cms/Fixtures/page_list.php
      * @magentoApiDataFixture Magento/Catalog/_files/category_with_three_products.php
      * @return void
      * @throws CouldNotSaveException
      */
-    public function testCMSContentProductListing(): void
+    public function testCMSContentProductListingSortOrder(): void
     {
         $category = $this->categoryCollection->addFieldToFilter(
             'name',
@@ -83,9 +84,10 @@ class CMSContentProductListing extends GraphQlAbstract
         $this->pageRepository->save($page);
 
         $productPositions = $category->getProductsPosition();
+        $products = array_keys($productPositions);
         $index = 2;
-        foreach ($productPositions as $productId => $position) {
-            $productPositions[$productId] = $index;
+        foreach ($products as $product) {
+            $productPositions[$product] = $index;
             $index--;
         }
 
@@ -121,6 +123,8 @@ class CMSContentProductListing extends GraphQlAbstract
     }
 
     /**
+     * Create GraphQL CMS page query
+     *
      * @param string $identifier
      * @param array $fields
      * @return string
