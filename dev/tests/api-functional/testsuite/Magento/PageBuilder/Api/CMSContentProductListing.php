@@ -73,7 +73,7 @@ class CMSContentProductListing extends GraphQlAbstract
             'data-pb-style="E4B30DS"><div data-content-type="products" data-appearance="grid" ' .
             'data-element="main">{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" ' .
             'template="Magento_CatalogWidget::product/widget/content/grid.phtml" anchor_text="" id_path="" ' .
-            'show_pager="0" products_count="5" condition_option="category_ids" condition_option_value="' .$categoryId
+            'show_pager="0" products_count="5" condition_option="category_ids" condition_option_value="' . $categoryId
             .'"type_name="Catalog Products List" conditions_encoded="^[`1`:^[`aggregator`:`all`,`new_child`:``,' .
             '`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`value`:`1`^],`1--1`:^[`operator`:`==`,' .
             '`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,' .
@@ -83,21 +83,20 @@ class CMSContentProductListing extends GraphQlAbstract
         $this->pageRepository->save($page);
 
         $productPositions = $category->getProductsPosition();
-        $count = 3;
+        $index = 2;
         foreach ($productPositions as $productId => $position) {
-            $productPositions[$productId] = $count;
-            $count--;
+            $productPositions[$productId] = $index;
+            $index--;
         }
-        ksort($productPositions);
 
         $category->setPostedProducts($productPositions);
         $category->save();
 
         $query = $this->getQuery($page->getIdentifier(), ['title', 'content']);
         $response = $this->graphQlQueryWithResponseHeaders($query);
-        $position1 = strpos($response['body']['cmsPage']['content'], '/simple-product-with-price-10.html');
-        $position2 = strpos($response['body']['cmsPage']['content'], '/simple-product2.html');
-        $position3 = strpos($response['body']['cmsPage']['content'], '/simple-product-with-price-20.html');
+        $position1 = strpos($response['body']['cmsPage']['content'], '/simple-product2.html');
+        $position2 = strpos($response['body']['cmsPage']['content'], '/simple-product-with-price-20.html');
+        $position3 = strpos($response['body']['cmsPage']['content'], '/simple-product-with-price-10.html');
         $this->assertTrue($position1 < $position2 && $position2 < $position3);
     }
 
