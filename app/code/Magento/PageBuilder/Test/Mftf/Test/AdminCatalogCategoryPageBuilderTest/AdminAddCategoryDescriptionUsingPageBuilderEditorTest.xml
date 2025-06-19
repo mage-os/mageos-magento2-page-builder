@@ -55,7 +55,8 @@
         <!--Step 4: Untick the box 'Use default value' next to the category description field WYSWYG editor-->
         <scrollTo selector="{{AdminCategoryContentSection.categoryDescriptionUseDefault}}" x="0" y="-80" stepKey="scrollToDescription"/>
         <conditionalClick selector="{{AdminCategoryContentSection.categoryDescriptionUseDefault}}" dependentSelector="{{AdminCategoryContentSection.categoryDescriptionUseDefault}}" visible="true" stepKey="uncheckUseDefaultValueStoreView"/>
-        <!--Step 5: Enter a description in the WYSIWYG editor and assert the description-->
+        <scrollTo  selector="{{PageBuilderProductAttribute.PageBuilderBtn('description')}}" x="0" y="-80" stepKey="scrollToPageBuilderbtn"/>
+      <!--Step 5: Enter a description in the WYSIWYG editor and assert the description-->
         <actionGroup ref="openPageBuilderForAttribute" stepKey="openPageBuilderEditor"/>
         <actionGroup ref="dragContentTypeToStage" stepKey="dragRowToRootContainer">
             <argument name="contentType" value="PageBuilderRowContentType"/>
