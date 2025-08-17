@@ -35,6 +35,10 @@
         <after>
             <deleteData createDataKey="createPageBuilderAttribute1" stepKey="deleteAttribute1"/>
             <deleteData createDataKey="createPageBuilderAttribute2" stepKey="deleteAttribute2"/>
+            <!-- Delete product created via UI -->
+            <actionGroup ref="DeleteProductBySkuActionGroup" stepKey="deleteProduct">
+                <argument name="sku" value="{{SimpleProduct.sku}}"/>
+            </actionGroup>
             <actionGroup ref="CliIndexerReindexActionGroup" stepKey="reindex">
                 <argument name="indices" value=""/>
             </actionGroup>
