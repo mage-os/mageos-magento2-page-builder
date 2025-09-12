@@ -75,11 +75,8 @@ class TemplatePluginTest extends TestCase
         $dataProviderArgs = [];
         foreach ($preFilteredFiles as $preFilteredFile) {
             $preFilteredBasename = basename($preFilteredFile);
-            $postFilteredFile = pathinfo($preFilteredFile, PATHINFO_DIRNAME) . '/' . str_replace(
-                    'pre_filter',
-                    'post_filter',
-                    $preFilteredBasename
-                );
+            $postFilteredBasename = str_replace('pre_filter', 'post_filter', $preFilteredBasename);
+            $postFilteredFile = pathinfo($preFilteredFile, PATHINFO_DIRNAME) . '/' . $postFilteredBasename;
 
             $dataProviderArgs[] = [
                 file_get_contents($preFilteredFile),
