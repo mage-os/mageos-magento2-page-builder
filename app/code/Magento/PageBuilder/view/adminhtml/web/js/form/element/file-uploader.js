@@ -16,24 +16,28 @@ define([
              */
             replaceInputTypeFile: function (fileInput) {
                 let fileId = fileInput.id, fileName = fileInput.name, fileClass = fileInput.className,
-                    spanElement =  '<span id=\'' + fileId + fileClass + '\' ></span>';
+                    spanElement = '<span id=\'' + fileId + fileClass + '\' ></span>',
+                    self = this;
 
                 $('#' + fileId).closest('.file-uploader-area').attr('upload-area-id', fileName);
                 $('#' + fileId + fileClass).closest('.file-uploader-area').attr('upload-area-id', fileName);
 
                 $(fileInput).replaceWith(spanElement);
 
-                let self = this;
-                $('#' + fileId + fileClass).closest('.file-uploader-area').find('.action-upload-image').on('click', function (e) {
-                    e.preventDefault();
-                    let $area = $(this).closest('.file-uploader-area');
-                    if (self.triggerFileBrowser) {
-                        self.triggerFileBrowser($area);
-                    } else {
-                        $area.find('.uppy-Dashboard-browse').trigger('click');
-                    }
-                });
-            },
+                $('#' + fileId + fileClass)
+                    .closest('.file-uploader-area')
+                    .find('.action-upload-image')
+                    .on('click', function (e) {
+                        let $area = $(this).closest('.file-uploader-area');
+
+                        e.preventDefault();
+                        if (self.triggerFileBrowser) {
+                            self.triggerFileBrowser($area);
+                        } else {
+                            $area.find('.uppy-Dashboard-browse').trigger('click');
+                        }
+                    });
+            }
         });
     };
 });
