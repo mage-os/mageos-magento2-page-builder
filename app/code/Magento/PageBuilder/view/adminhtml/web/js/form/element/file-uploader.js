@@ -23,12 +23,25 @@ define([
 
                 $(fileInput).replaceWith(spanElement);
 
-                $('#' + fileId).closest('.file-uploader-area').find('.file-uploader-button:first').on('click', function () {
-                    $(this).closest('.file-uploader-area').find('.uppy-Dashboard-browse').trigger('click');
+                let self = this;
+                $('#' + fileId).closest('.file-uploader-area').find('.file-uploader-button:first').on('click', function (e) {
+                    e.preventDefault();
+                    let $area = $(this).closest('.file-uploader-area');
+                    if (self.triggerFileBrowser) {
+                        self.triggerFileBrowser($area);
+                    } else {
+                        $area.find('.uppy-Dashboard-browse').trigger('click');
+                    }
                 });
 
-                $('#' + fileId + fileClass).closest('.file-uploader-area').find('.action-upload-image').on('click', function () {
-                    $(this).closest('.file-uploader-area').find('.uppy-Dashboard-browse').trigger('click');
+                $('#' + fileId + fileClass).closest('.file-uploader-area').find('.action-upload-image').on('click', function (e) {
+                    e.preventDefault();
+                    let $area = $(this).closest('.file-uploader-area');
+                    if (self.triggerFileBrowser) {
+                        self.triggerFileBrowser($area);
+                    } else {
+                        $area.find('.uppy-Dashboard-browse').trigger('click');
+                    }
                 });
             },
         });
