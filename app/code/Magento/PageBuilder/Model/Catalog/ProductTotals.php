@@ -14,6 +14,7 @@ use Magento\Catalog\Model\Product\Visibility;
 use Magento\Catalog\Model\ResourceModel\Product\Collection;
 use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
 use Magento\CatalogWidget\Model\Rule;
+use Magento\CatalogWidget\Model\Rule\Condition\Product\CategoryConditionProcessor;
 use Magento\Framework\App\ObjectManager;
 use Magento\Framework\App\ResourceConnection;
 use Magento\Framework\EntityManager\MetadataPool;
@@ -67,6 +68,11 @@ class ProductTotals
     private ResourceConnection $resource;
 
     /**
+     * @var CategoryConditionProcessor
+     */
+    private CategoryConditionProcessor $categoryConditionProcessor;
+
+    /**
      * @param CollectionFactory $productCollectionFactory
      * @param Builder $sqlBuilder
      * @param Rule $rule
@@ -74,6 +80,7 @@ class ProductTotals
      * @param CategoryRepositoryInterface $categoryRepository
      * @param MetadataPool|null $metadataPool
      * @param ResourceConnection|null $resource
+     * @param CategoryConditionProcessor|null $categoryConditionProcessor
      */
     public function __construct(
         CollectionFactory $productCollectionFactory,
@@ -82,7 +89,8 @@ class ProductTotals
         Conditions $conditionsHelper,
         CategoryRepositoryInterface $categoryRepository,
         ?MetadataPool $metadataPool = null,
-        ?ResourceConnection $resource = null
+        ?ResourceConnection $resource = null,
+        ?CategoryConditionProcessor $categoryConditionProcessor = null
     ) {
         $this->productCollectionFactory = $productCollectionFactory;
         $this->sqlBuilder = $sqlBuilder;
@@ -91,6 +99,8 @@ class ProductTotals
         $this->categoryRepository = $categoryRepository;
         $this->metadataPool = $metadataPool ?: ObjectManager::getInstance()->get(MetadataPool::class);
         $this->resource = $resource ?: ObjectManager::getInstance()->get(ResourceConnection::class);
+        $this->categoryConditionProcessor = $categoryConditionProcessor ?: ObjectManager::getInstance()
+            ->get(CategoryConditionProcessor::class);
     }
 
     /**
@@ -112,41 +122,13 @@ class ProductTotals
                 }
 
                 if ($condition['attribute'] == 'category_ids') {
-                    $conditions[$key] = $this->updateAnchorCategoryConditions($condition);
+                    $conditions[$key] = $this->categoryConditionProcessor->process($condition);
                 }
             }
         }
 
         $this->rule->loadPost(['conditions' => $conditions]);
         return $this->rule->getConditions();
-    }
-
-    /**
-     * Update conditions if the category is an anchor category
-     *
-     * @param array $condition
-     * @return array
-     */
-    private function updateAnchorCategoryConditions(array $condition): array
-    {
-        if (array_key_exists('value', $condition)) {
-            $categoryId = $condition['value'];
-
-            try {
-                $category = $this->categoryRepository->get($categoryId);
-            } catch (NoSuchEntityException $e) {
-                return $condition;
-            }
-
-            if ($category->getIsAnchor() && $category->getChildren(true)) {
-                $children = explode(',', $category->getChildren(true));
-
-                $condition['operator'] = "()";
-                $condition['value'] = array_merge([$categoryId], $children);
-            }
-        }
-
-        return $condition;
     }
 
     /**
