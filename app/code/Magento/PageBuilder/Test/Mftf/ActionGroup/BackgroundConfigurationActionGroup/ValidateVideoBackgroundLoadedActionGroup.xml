@@ -18,6 +18,6 @@
         <waitForPageLoad stepKey="waitForPageLoad"/>
         <waitForElement selector="{{section.videoBackgroundJarallaxContainer(index)}}" stepKey="waitForJarallaxContainer"/>
         <wait time="5" stepKey="waitForIFrameSwitch"/>
-        <seeElement selector="{{section.videoBackgroundVideoElement(index)}}" stepKey="seeVideoInDOM"/>
+        <waitForElementVisible selector="{{section.videoBackgroundVideoElement(index)}}" stepKey="seeVideoInDOM"/>
     </actionGroup>
 </actionGroups>
