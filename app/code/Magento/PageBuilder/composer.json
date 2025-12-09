@@ -27,9 +27,6 @@
     "suggest": {
         "magento/module-review": "*"
     },
-    "conflict": {
-        "gene/bluefoot": "*"
-    },
     "type": "magento2-module",
     "license": [
         "proprietary"
