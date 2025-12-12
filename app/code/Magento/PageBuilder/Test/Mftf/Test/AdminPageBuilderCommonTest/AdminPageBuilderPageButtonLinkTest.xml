@@ -81,7 +81,7 @@
 
         <!--Select another page from dropdown-->
 	    <clearField selector="{{PageBuilderLinkAttributeAdmin.LinkSearch}}" stepKey="clearLinkSearchField"/>
-        <fillField selector="{{PageBuilderLinkAttributeAdmin.LinkSearch}}" userInput="{{$createCMSPageB.title$}}" stepKey="fillCreateCMSPageBInSearchField"/>
+        <fillField selector="{{PageBuilderLinkAttributeAdmin.LinkSearch}}" userInput="$createCMSPageB.title$" stepKey="fillCreateCMSPageBInSearchField"/>
 	    <waitForElementVisible selector="{{PageBuilderLinkAttributeAdmin.SearchResult($createCMSPageB.title$)}}" stepKey="waitForCMSPageBVisible"/>
 	    <scrollTo selector="{{PageBuilderLinkAttributeAdmin.SearchResult($createCMSPageB.title$)}}" stepKey="scrollToLinks"/>
         <waitForElementClickable selector="{{PageBuilderLinkAttributeAdmin.SearchResult($createCMSPageB.title$)}}" stepKey="waitForCMSPageBClickable"/>
