@@ -12,12 +12,17 @@ use Magento\Framework\Session\SessionManagerInterface;
 use Magento\PageBuilder\Model\Session\RandomKey;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Magento\Framework\Session\Generic as SessionGeneric;
+use Magento\Framework\TestFramework\Unit\Helper\MockCreationTrait;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * Test for session random key
  */
 class RandomKeyTest extends TestCase
 {
+    use MockCreationTrait;
+
     /**
      * @var SessionManagerInterface|MockObject
      */
@@ -39,9 +44,7 @@ class RandomKeyTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->session = $this->getMockBuilder(SessionManagerInterface::class)
-            ->addMethods(['getData', 'setData'])
-            ->getMockForAbstractClass();
+        $this->session = $this->createPartialMockWithReflection(SessionGeneric::class, ['getData', 'setData']);
         $this->random = $this->createMock(Random::class);
     }
 
@@ -50,8 +53,8 @@ class RandomKeyTest extends TestCase
      * @param int $keyLength
      * @param string|null $value
      * @param string $expected
-     * @dataProvider getValueDataProvider
      */
+    #[DataProvider('getValueDataProvider')]
     public function testGetValue(string $keyName, int $keyLength, ?string $value, string $expected): void
     {
         $this->model = new RandomKey(
