@@ -24,12 +24,14 @@ use Magento\MediaStorage\Helper\File\Storage\Database;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Magento\Framework\TestFramework\Unit\Helper\MockCreationTrait;
 
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class TemplateRepositoryTest extends TestCase
 {
+    use MockCreationTrait;
     /**
      * @var ResourceTemplate|MockObject
      */
@@ -108,12 +110,10 @@ class TemplateRepositoryTest extends TestCase
     public function testDelete()
     {
         $templateId = 1;
-        $templateMock =$this->getMockBuilder(Template::class)
-            ->disableOriginalConstructor()
-            ->addMethods(['getTemplateId'])
-            ->onlyMethods(['getPreviewImage', 'getPreviewThumbnailImage'])
-            ->getMock();
-        ;
+        $templateMock = $this->createPartialMockWithReflection(
+            Template::class,
+            ['getTemplateId', 'getPreviewImage', 'getPreviewThumbnailImage']
+        );
         $templateMock->expects($this->once())
             ->method('getTemplateId')
             ->willReturn($templateId);
@@ -155,10 +155,10 @@ class TemplateRepositoryTest extends TestCase
     {
         $this->expectException(CouldNotDeleteException::class);
 
-        $templateMock =$this->getMockBuilder(Template::class)
-            ->disableOriginalConstructor()
-            ->addMethods(['getTemplateId'])
-            ->getMock();
+        $templateMock = $this->createPartialMockWithReflection(
+            Template::class,
+            ['getTemplateId']
+        );
         $templateMock->expects($this->once())
             ->method('getTemplateId')
             ->willReturn(1);
