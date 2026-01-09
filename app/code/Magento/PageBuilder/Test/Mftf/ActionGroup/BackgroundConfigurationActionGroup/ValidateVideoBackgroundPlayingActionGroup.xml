@@ -18,7 +18,7 @@
         </arguments>
         <waitForPageLoad stepKey="waitForPageLoad"/>
         <wait time="5" stepKey="waitToPreventVideoFlakiness"/>
-        <waitForElementVisible selector="{{section.videoBackgroundVideoElement(index)}}" stepKey="waitForVideoVisible" time="120"/>
+        <waitForElementVisible selector="{{section.videoBackgroundVideoElement(index)}}" stepKey="waitForVideoVisible"/>
         <comment userInput="BIC Change for PB Video: {{videoUrl.name}} is encrypted" stepKey="waitForVideoUrl"/>
         <grabAttributeFrom selector="{{section.videoBackgroundVideoElement(index)}}" userInput="style" stepKey="videoStyle"/>
         <assertStringContainsString stepKey="assertVideoPlaying">

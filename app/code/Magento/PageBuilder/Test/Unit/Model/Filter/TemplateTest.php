@@ -13,6 +13,7 @@ use Magento\Framework\View\ConfigInterface;
 use Magento\PageBuilder\Model\Filter\Template;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Psr\Log\LoggerInterface;
 
 class TemplateTest extends TestCase
@@ -49,10 +50,10 @@ class TemplateTest extends TestCase
     }
 
     /**
-     * @dataProvider filterProvider
      * @param string $input
      * @param string $output
      */
+    #[DataProvider('filterProvider')]
     public function testFilter(string $input, string $output): void
     {
         $this->assertEquals($output, $this->model->filter($input));
