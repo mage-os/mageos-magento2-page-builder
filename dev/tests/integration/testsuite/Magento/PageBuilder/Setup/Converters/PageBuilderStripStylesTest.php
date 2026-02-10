@@ -13,6 +13,7 @@ use DOMElement;
 use DOMXPath;
 use Magento\Framework\ObjectManagerInterface;
 use Magento\TestFramework\Helper\Bootstrap;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -34,12 +35,9 @@ class PageBuilderStripStylesTest extends TestCase
 
     /**
      * Test Batch Conversion of Page Builder Content
-     *
-     * @dataProvider conversionData
-     * @dataProvider conversionDataRaw
-     * @param string $htmlString
-     * @param int $expectedStyleTags
      */
+    #[DataProvider('conversionData')]
+    #[DataProvider('conversionDataRaw')]
     public function testConvert(string $htmlString, int $expectedStyleTags)
     {
         $convertPageBuilderStripStyles = $this->objectManager->create(PageBuilderStripStyles::class);
