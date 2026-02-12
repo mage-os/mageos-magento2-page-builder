@@ -14,6 +14,7 @@ use Magento\TestFramework\Fixture\AppArea;
 use Magento\TestFramework\Fixture\Config;
 use Magento\TestFramework\Helper\Bootstrap;
 use Magento\Widget\Model\Template\Filter;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -45,10 +46,8 @@ class ProductListTest extends TestCase
      * @magentoDbIsolation disabled
      * @magentoConfigFixture default_store catalog/price/scope 1
      * @magentoDataFixture Magento/Catalog/_files/category_with_different_price_products.php
-     * @param string $order
-     * @param array $skus
-     * @dataProvider priceSortDataProvider
      */
+    #[DataProvider('priceSortDataProvider')]
     public function testPriceSort(string $order, array $skus)
     {
         $encodedConditions = '^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,
@@ -70,11 +69,8 @@ class ProductListTest extends TestCase
      * @magentoDbIsolation disabled
      * @magentoConfigFixture default_store catalog/price/scope 1
      * @magentoDataFixture Magento/Catalog/_files/category_with_different_price_products.php
-     * @param string $operator
-     * @param int $value
-     * @param array $matches
-     * @dataProvider priceFilterDataProvider
      */
+    #[DataProvider('priceFilterDataProvider')]
     public function testPriceFilter(string $operator, int $value, array $matches)
     {
         $encodedConditions = '^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,
@@ -120,12 +116,8 @@ class ProductListTest extends TestCase
      * @magentoDataFixture Magento/Catalog/_files/multiple_products.php
      * @magentoDataFixture Magento/Catalog/_files/products_list.php
      * @magentoDataFixture Magento/Catalog/_files/categories_no_products.php
-     * @param array $categories
-     * @param int $categoryId
-     * @param string $order
-     * @param array $skus
-     * @dataProvider categoryFilterAndSortDataProvider
      */
+    #[DataProvider('categoryFilterAndSortDataProvider')]
     public function testCategoryFilterAndSort(array $categories, int $categoryId, string $order, array $skus): void
     {
         $objectManager = Bootstrap::getObjectManager();
