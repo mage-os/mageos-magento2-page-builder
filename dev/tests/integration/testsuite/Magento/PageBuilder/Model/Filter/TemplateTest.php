@@ -8,6 +8,7 @@ declare(strict_types=1);
 namespace Magento\PageBuilder\Model\Filter;
 
 use Magento\TestFramework\ObjectManager;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class TemplateTest extends \PHPUnit\Framework\TestCase
 {
@@ -21,12 +22,7 @@ class TemplateTest extends \PHPUnit\Framework\TestCase
         $this->templateFilter = ObjectManager::getInstance()->create(Template::class);
     }
 
-    /**
-     * @param string $results
-     * @param bool $contains
-     * @param string $value
-     * @dataProvider getFilterForDataProvider
-     */
+    #[DataProvider('getFilterForDataProvider')]
     public function testFilterFor(string $results, bool $contains, string $value)
     {
         $contains ?
