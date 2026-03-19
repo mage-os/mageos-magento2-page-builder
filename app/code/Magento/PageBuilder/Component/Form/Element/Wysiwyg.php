@@ -19,11 +19,14 @@ use Magento\PageBuilder\Model\Config as PageBuilderConfig;
 use Magento\PageBuilder\Model\State as PageBuilderState;
 use Magento\PageBuilder\Model\Stage\Config as Config;
 use Magento\Framework\AuthorizationInterface;
+use Magento\Ui\Model\Validation\WysiwygValidationConfigResolver;
 
 /**
  * Updates wysiwyg element with Page Builder specific config
  *
  * @api
+ *
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class Wysiwyg extends \Magento\Ui\Component\Form\Element\Wysiwyg
 {
@@ -105,6 +108,9 @@ class Wysiwyg extends \Magento\Ui\Component\Form\Element\Wysiwyg
             $wysiwygConfigData = $stageConfig->getConfig();
             $wysiwygConfigData['pagebuilder_button'] = true;
             $wysiwygConfigData['pagebuilder_content_snapshot'] = true;
+            $wysiwygConfigData['allowUtf8mb4'] = ObjectManager::getInstance()
+                ->get(WysiwygValidationConfigResolver::class)
+                ->resolveAllowUtf8mb4($config);
             $wysiwygConfigData = $this->processBreakpointsIcons($wysiwygConfigData);
 
             if ($overrideSnapshot) {
@@ -130,7 +136,6 @@ class Wysiwyg extends \Magento\Ui\Component\Form\Element\Wysiwyg
 
         parent::__construct($context, $formFactory, $wysiwygConfig, $components, $data, $config);
     }
-
     /**
      * Process viewport icon paths
      *
