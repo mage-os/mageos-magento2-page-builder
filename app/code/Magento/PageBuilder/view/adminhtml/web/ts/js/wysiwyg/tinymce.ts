@@ -12,8 +12,8 @@ import WysiwygInstanceInterface from "wysiwygAdapter";
 import {AdditionalDataConfigInterface} from "../content-type-config.types";
 import DataStore from "../data-store";
 import checkStageFullScreen from "../utils/check-stage-full-screen";
-import {convertMediaUrlsToDirectives} from "../utils/directives";
 import delayUntil from "../utils/delay-until";
+import {convertMediaUrlsToDirectives} from "../utils/directives";
 import pageBuilderHeaderHeight from "../utils/pagebuilder-header-height";
 import WysiwygInterface from "./wysiwyg-interface";
 
