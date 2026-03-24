@@ -16,17 +16,21 @@ use PHPUnit\Framework\SkippedWithMessageException;
 class Utf8mb4ValidationHelper extends Helper
 {
     /**
-     * Skip the current test when the target storage is not utf8mb4-safe.
+     * Skip the current test when the target storage is utf8mb4-safe.
      *
      * @param string $table
      * @param string $column
      * @return void
      */
-    public function skipIfUtf8mb4Unsupported(string $table, string $column): void
+    public function skipIfUtf8mb4Supported(string $table, string $column): void
     {
-        if (!$this->isColumnSupported($table, $column)) {
+        if ($this->isColumnSupported($table, $column)) {
             throw new SkippedWithMessageException(
-                sprintf('Skipping utf8mb4 positive path because %s.%s is not utf8mb4-safe.', $table, $column)
+                sprintf(
+                    'Skipping utf8mb3 rejection path because %s.%s is utf8mb4-safe.',
+                    $table,
+                    $column
+                )
             );
         }
     }
@@ -59,9 +63,12 @@ class Utf8mb4ValidationHelper extends Helper
         static $objectManager;
 
         if (!$objectManager instanceof ObjectManagerInterface) {
-            require_once dirname(__DIR__, 6) . '/app/bootstrap.php';
+            $rootPath = defined('BP') ? BP : dirname(__DIR__, 8);
+            $bootstrapPath = $rootPath . '/app/bootstrap.php';
 
-            $objectManager = Bootstrap::create(BP, $_SERVER)->getObjectManager();
+            require_once $bootstrapPath;
+
+            $objectManager = Bootstrap::create($rootPath, $_SERVER)->getObjectManager();
         }
 
         return $objectManager;

@@ -23,7 +23,7 @@
             <magentoCLI command="config:set cms/wysiwyg/enabled disabled" stepKey="disableWYSIWYG"/>
             <createData entity="_emptyCmsPage" stepKey="createCMSPage"/>
             <actionGroup ref="AdminLoginActionGroup" stepKey="loginAsAdmin"/>
-            <helper class="Magento\PageBuilder\Test\Mftf\Helper\Utf8mb4ValidationHelper" method="skipIfUtf8mb4Unsupported" stepKey="skipIfUtf8mb4Unsupported">
+            <helper class="Magento\PageBuilder\Test\Mftf\Helper\Utf8mb4ValidationHelper" method="skipIfUtf8mb4Supported" stepKey="skipIfUtf8mb4Supported">
                 <argument name="table">cms_page</argument>
                 <argument name="column">content</argument>
             </helper>
