@@ -226,7 +226,7 @@ define(["jquery", "mage/adminhtml/wysiwyg/events", "mage/adminhtml/wysiwyg/tiny_
     ;
 
     _proto.setContentFromDataStoreToWysiwyg = function setContentFromDataStoreToWysiwyg() {
-      this.getAdapter().setContent(this.dataStore.get(this.fieldName));
+      this.getAdapter().setContent((0, _directives.convertMediaDirectivesToUrls)(this.dataStore.get(this.fieldName)));
     }
     /**
      * Adjust padding on stage if in fullscreen mode to accommodate inline wysiwyg toolbar overflowing fixed viewport
