@@ -10,7 +10,7 @@ namespace Magento\PageBuilder\Test\Mftf\Helper;
 use Magento\Framework\App\Bootstrap;
 use Magento\Framework\ObjectManagerInterface;
 use Magento\FunctionalTestingFramework\Helper\Helper;
-use Magento\Ui\Model\Validation\Utf8mb4SupportInterface;
+use Magento\Ui\Model\ResourceModel\Utf8mb4SupportInterface;
 use PHPUnit\Framework\SkippedWithMessageException;
 
 class Utf8mb4ValidationHelper extends Helper
