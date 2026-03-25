@@ -63,14 +63,41 @@ class Utf8mb4ValidationHelper extends Helper
         static $objectManager;
 
         if (!$objectManager instanceof ObjectManagerInterface) {
-            $rootPath = defined('BP') ? BP : dirname(__DIR__, 8);
-            $bootstrapPath = $rootPath . '/app/bootstrap.php';
+            $rootPath = defined('BP') ? BP : $this->findMagentoRoot(__DIR__);
 
-            require_once $bootstrapPath;
+            if ($rootPath === null) {
+                throw new \RuntimeException(
+                    'Cannot locate Magento root directory from ' . __DIR__
+                );
+            }
+
+            require_once $rootPath . '/app/bootstrap.php';
 
             $objectManager = Bootstrap::create($rootPath, $_SERVER)->getObjectManager();
         }
 
         return $objectManager;
+    }
+
+    /**
+     * Walk up the directory tree to find the Magento root, the directory containing app/bootstrap.php
+     *
+     * @param string $startPath
+     * @return string|null
+     */
+    private function findMagentoRoot(string $startPath): ?string
+    {
+        $path = $startPath;
+        for ($i = 0; $i < 12; $i++) {
+            if (file_exists($path . '/app/bootstrap.php')) {
+                return $path;
+            }
+            $parent = dirname($path);
+            if ($parent === $path) {
+                return null;
+            }
+            $path = $parent;
+        }
+        return null;
     }
 }
