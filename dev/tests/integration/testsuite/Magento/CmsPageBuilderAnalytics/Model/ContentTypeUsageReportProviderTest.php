@@ -10,6 +10,7 @@ namespace Magento\CmsPageBuilderAnalytics\Model;
 
 use Magento\TestFramework\Helper\Bootstrap;
 use Magento\Framework\App\ResourceConnection;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * @magentoAppArea adminhtml
@@ -19,8 +20,8 @@ class ContentTypeUsageReportProviderTest extends \PHPUnit\Framework\TestCase
     /**
      * @magentoAppIsolation enabled
      * @magentoDataFixture Magento/CmsPageBuilderAnalytics/_files/pages.php
-     * @dataProvider reportDataProvider
      */
+    #[DataProvider('reportDataProvider')]
     public function testGetReport($expectedReportData, $ignoredContentTypes)
     {
         /* @var $resourceConnection ResourceConnection */
