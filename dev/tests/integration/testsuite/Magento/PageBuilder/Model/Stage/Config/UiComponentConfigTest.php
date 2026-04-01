@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Magento\PageBuilder\Model\Stage\Config;
 
 use Magento\TestFramework\Helper\Bootstrap;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class UiComponentConfigTest extends \PHPUnit\Framework\TestCase
 {
@@ -46,11 +47,8 @@ class UiComponentConfigTest extends \PHPUnit\Framework\TestCase
 
     /**
      * Verify getFields will return the expected output given an example UI component configuration
-     *
-     * @param array $uiConfig
-     * @param array $expectedFields
-     * @dataProvider uiConfigDataProvider
      */
+    #[DataProvider('uiConfigDataProvider')]
     public function testGetFields(array $uiConfig, array $expectedFields)
     {
         $uiConfigMock = $this->createMock(\Magento\Framework\Config\DataInterface::class);
