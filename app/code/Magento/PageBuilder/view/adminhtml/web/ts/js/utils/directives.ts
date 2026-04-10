@@ -207,6 +207,7 @@ export function convertMediaUrlsToDirectives(html: string): string {
         const directive = tryConvertAbsoluteMediaUrlToDirective(src, mediaUrlConfig);
         if (directive !== null) {
             img.setAttribute("src", directive);
+            updated = true;
         }
     });
     return updated ? doc.body.innerHTML : html;
