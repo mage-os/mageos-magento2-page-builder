@@ -18,6 +18,9 @@
         <testCaseId value="MC-41793"/>
         <group value="pagebuilder"/>
         <group value="pagebuilder-text"/>
+        <skip>
+            <issueId value="https://jira.corp.adobe.com/browse/AC-16791"/>
+        </skip>
     </annotations>
     <actionGroup ref="AddPageLinkWidgetToTinyMCEWithAnchorAndTitleActionGroup" stepKey="addPageLinkWidgetToTinyMCE">
         <argument name="page" value="$$createCMSPageB.identifier$$"/>
