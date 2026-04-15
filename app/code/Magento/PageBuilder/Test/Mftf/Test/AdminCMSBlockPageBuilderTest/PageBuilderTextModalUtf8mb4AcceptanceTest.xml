@@ -15,6 +15,7 @@
             <description value="Verify that inserting emoji characters (utf8mb4) in the Text content type edit panel does not trigger a validation error when the database column supports utf8mb4."/>
             <severity value="AVERAGE"/>
             <useCaseId value="ACP2E-4822"/>
+            <testCaseId value="AC-16891"/>
             <group value="pagebuilder"/>
             <group value="pagebuilder-text"/>
         </annotations>
