@@ -1,27 +1,31 @@
 {
-    "name": "magento/module-page-builder-admin-analytics",
-    "description": "Page Builder Admin Analytics module",
-    "config": {
-        "sort-packages": true
-    },
-    "require": {
-        "magento/framework": "*",
-        "php": "~8.2.0||~8.3.0||~8.4.0"
-    },
-    "suggest": {
-        "magento/module-admin-analytics": "*",
-        "magento/module-page-builder": "*"
-    },
-    "type": "magento2-module",
-    "license": [
-        "proprietary"
+  "name": "mage-os/module-page-builder-admin-analytics",
+  "description": "Page Builder Admin Analytics module",
+  "config": {
+    "sort-packages": true
+  },
+  "require": {
+    "mage-os/framework": "2.2.2",
+    "php": "~8.2.0||~8.3.0||~8.4.0"
+  },
+  "suggest": {
+    "mage-os/module-admin-analytics": "2.2.2",
+    "mage-os/module-page-builder": "2.2.2"
+  },
+  "type": "magento2-module",
+  "license": [
+    "proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
     ],
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "Magento\\PageBuilderAdminAnalytics\\": ""
-        }
+    "psr-4": {
+      "Magento\\PageBuilderAdminAnalytics\\": ""
     }
+  },
+  "version": "2.2.2",
+  "replace": {
+    "magento/module-page-builder-admin-analytics": "1.1.5"
+  }
 }
