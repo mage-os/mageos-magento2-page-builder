@@ -17,26 +17,32 @@ define([
             replaceInputTypeFile: function (fileInput) {
                 let fileId = fileInput.id, fileName = fileInput.name, fileClass = fileInput.className,
                     spanElement = '<span id=\'' + fileId + fileClass + '\' ></span>',
-                    self = this;
+                    self = this,
+                    $area,
+                    $targets;
 
                 $('#' + fileId).closest('.file-uploader-area').attr('upload-area-id', fileName);
                 $('#' + fileId + fileClass).closest('.file-uploader-area').attr('upload-area-id', fileName);
 
                 $(fileInput).replaceWith(spanElement);
 
-                $('#' + fileId + fileClass)
-                    .closest('.file-uploader-area')
-                    .find('.action-upload-image')
-                    .on('click', function (e) {
-                        let $area = $(this).closest('.file-uploader-area');
+                $area = $('#' + fileId + fileClass).closest('.file-uploader-area');
+                $targets = $area.find('.action-upload-image');
 
-                        e.preventDefault();
-                        if (self.triggerFileBrowser) {
-                            self.triggerFileBrowser($area);
-                        } else {
-                            $area.find('.uppy-Dashboard-browse').trigger('click');
-                        }
-                    });
+                if (!$targets.length) {
+                    $targets = $area.find('.file-uploader-button').first();
+                }
+
+                $targets.off('click.mageFileUploader').on('click.mageFileUploader', function (e) {
+                    let $clickArea = $(this).closest('.file-uploader-area');
+
+                    e.preventDefault();
+                    if (self.triggerFileBrowser) {
+                        self.triggerFileBrowser($clickArea);
+                    } else {
+                        $clickArea.find('.uppy-Dashboard-browse').trigger('click');
+                    }
+                });
             }
         });
     };
