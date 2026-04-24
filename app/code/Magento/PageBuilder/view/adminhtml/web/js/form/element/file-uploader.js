@@ -28,25 +28,25 @@ define([
                             $clickArea.find('.uppy-Dashboard-browse').trigger('click');
                         }
                     },
-                    $actionUpload;
+                    $area,
+                    areaEl,
+                    clickTarget;
 
                 $('#' + fileId).closest('.file-uploader-area').attr('upload-area-id', fileName);
                 $('#' + fileId + fileClass).closest('.file-uploader-area').attr('upload-area-id', fileName);
 
                 $(fileInput).replaceWith(spanElement);
 
-                $actionUpload = $('#' + fileId + fileClass)
-                    .closest('.file-uploader-area')
-                    .find('.action-upload-image');
+                $area = $('#' + fileId + fileClass).closest('.file-uploader-area');
+                areaEl = $area[0];
 
-                if ($actionUpload.length) {
-                    $actionUpload.on('click', clickHandler);
-                } else {
-                    $('#' + fileId + fileClass)
-                        .closest('.file-uploader-area')
-                        .find('.file-uploader-button')
-                        .first()
-                        .on('click', clickHandler);
+                if (areaEl) {
+                    clickTarget = areaEl.querySelector('.action-upload-image') ||
+                        areaEl.querySelector('.file-uploader-button');
+
+                    if (clickTarget) {
+                        $(clickTarget).on('click', clickHandler);
+                    }
                 }
             }
         });
