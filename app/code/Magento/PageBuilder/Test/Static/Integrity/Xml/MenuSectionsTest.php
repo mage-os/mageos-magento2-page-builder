@@ -6,10 +6,10 @@
 
 declare(strict_types=1);
 
-namespace Magento\Test\Integrity\Xml;
+namespace Magento\PageBuilder\Test\Static\Integrity\Xml;
 
-use Magento\Framework\Component\DirSearch;
 use Magento\Framework\Component\ComponentRegistrar;
+use Magento\Framework\Component\DirSearch;
 use Magento\Framework\Filesystem\Directory\ReadFactory;
 use Magento\Framework\Filesystem\DriverPool;
 
