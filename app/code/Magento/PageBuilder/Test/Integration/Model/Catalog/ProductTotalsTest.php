@@ -12,6 +12,7 @@ use Magento\Catalog\Test\Fixture\Category as CategoryFixture;
 use Magento\Catalog\Test\Fixture\Product as ProductFixture;
 use Magento\CatalogWidget\Model\Rule\Condition\Combine;
 use Magento\CatalogWidget\Model\Rule\Condition\Product;
+use Magento\PageBuilder\Model\Catalog\ProductTotals;
 use Magento\TestFramework\Fixture\DataFixture;
 use Magento\TestFramework\Fixture\DataFixtureStorageManager;
 use PHPUnit\Framework\Attributes\DataProvider;

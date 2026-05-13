@@ -9,6 +9,7 @@ namespace Magento\PageBuilder\Test\Integration\Plugin\Filter;
 
 use Magento\Framework\App\Area;
 use Magento\Framework\Filter\Template as FrameworkTemplateFilter;
+use Magento\PageBuilder\Plugin\Filter\TemplatePlugin;
 use Magento\Store\Model\Store;
 use Magento\TestFramework\Fixture\AppArea;
 use Magento\TestFramework\Fixture\DataFixture;

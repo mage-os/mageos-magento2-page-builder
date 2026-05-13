@@ -12,6 +12,7 @@ use DOMDocument;
 use DOMElement;
 use DOMXPath;
 use Magento\Framework\ObjectManagerInterface;
+use Magento\PageBuilder\Setup\Converters\PageBuilderStripStyles;
 use Magento\TestFramework\Helper\Bootstrap;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;

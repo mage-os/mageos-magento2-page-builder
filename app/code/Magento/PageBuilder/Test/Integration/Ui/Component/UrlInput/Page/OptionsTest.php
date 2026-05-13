@@ -8,8 +8,9 @@ declare(strict_types=1);
 
 namespace Magento\PageBuilder\Test\Integration\Ui\Component\UrlInput\Page;
 
-use Magento\TestFramework\Helper\Bootstrap;
 use Magento\Cms\Model\ResourceModel\Page\CollectionFactory;
+use Magento\PageBuilder\Ui\Component\UrlInput\Page\Options;
+use Magento\TestFramework\Helper\Bootstrap;
 
 class OptionsTest extends \PHPUnit\Framework\TestCase
 {

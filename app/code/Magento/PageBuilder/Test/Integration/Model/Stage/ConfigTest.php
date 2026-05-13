@@ -8,6 +8,7 @@ declare(strict_types=1);
 namespace Magento\PageBuilder\Test\Integration\Model\Stage;
 
 use Magento\Framework\Session\SessionManagerInterface;
+use Magento\PageBuilder\Model\Stage\Config;
 use Magento\Store\Api\Data\StoreInterface;
 use Magento\Store\Model\StoreManagerInterface;
 use Magento\TestFramework\Helper\Bootstrap;

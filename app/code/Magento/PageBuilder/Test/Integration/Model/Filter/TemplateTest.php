@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 namespace Magento\PageBuilder\Test\Integration\Model\Filter;
 
+use Magento\PageBuilder\Model\Filter\Template;
 use Magento\TestFramework\ObjectManager;
 use PHPUnit\Framework\Attributes\DataProvider;
 

@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 namespace Magento\PageBuilder\Test\Integration\Model\Dom;
 
+use Magento\Framework\ObjectManagerInterface;
 use Magento\TestFramework\Helper\Bootstrap;
 use Magento\PageBuilder\Model\Dom\Adapter\HtmlDocumentInterface;
 use Magento\PageBuilder\Model\Dom\Adapter\ElementInterface;
