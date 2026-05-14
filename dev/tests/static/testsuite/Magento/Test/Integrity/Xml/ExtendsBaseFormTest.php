@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace Magento\PageBuilder\Test\Static\Integrity\Xml;
+namespace Magento\Test\Integrity\Xml;
 
 use Magento\Framework\Component\ComponentRegistrar;
 
