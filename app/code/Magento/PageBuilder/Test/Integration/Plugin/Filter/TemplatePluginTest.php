@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
 
 #[
     CoversClass(TemplatePlugin::class),
-    DataFixture('Magento/PageBuilder/_files/custom_variable_xss.php'),
+    DataFixture('Magento_PageBuilder::Test/Integration/_files/custom_variable_xss.php'),
 ]
 class TemplatePluginTest extends TestCase
 {
