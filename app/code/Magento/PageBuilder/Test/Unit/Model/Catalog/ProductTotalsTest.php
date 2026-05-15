@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2023 Adobe
+ * All Rights Reserved.
  */
 declare(strict_types=1);
 
@@ -11,6 +11,7 @@ use Magento\Catalog\Api\CategoryRepositoryInterface;
 use Magento\Catalog\Model\ResourceModel\Product\Collection;
 use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
 use Magento\CatalogWidget\Model\Rule;
+use Magento\CatalogWidget\Model\Rule\Condition\Product\CategoryConditionProcessor;
 use Magento\Framework\App\ResourceConnection;
 use Magento\Framework\DB\Adapter\AdapterInterface;
 use Magento\Framework\DB\Select;
@@ -64,6 +65,11 @@ class ProductTotalsTest extends TestCase
     private ResourceConnection $resource;
 
     /**
+     * @var CategoryConditionProcessor|MockObject
+     */
+    private $categoryConditionProcessorMock;
+
+    /**
      * @var ProductTotals|MockObject
      */
     private ProductTotals $productTotals;
@@ -80,6 +86,7 @@ class ProductTotalsTest extends TestCase
         $this->categoryRepository = $this->createMock(CategoryRepositoryInterface::class);
         $this->metadataPool = $this->createMock(MetadataPool::class);
         $this->resource = $this->createMock(ResourceConnection::class);
+        $this->categoryConditionProcessorMock = $this->createMock(CategoryConditionProcessor::class);
 
         $this->productTotals = new ProductTotals(
             $this->productCollectionFactory,
@@ -88,7 +95,8 @@ class ProductTotalsTest extends TestCase
             $this->conditionsHelper,
             $this->categoryRepository,
             $this->metadataPool,
-            $this->resource
+            $this->resource,
+            $this->categoryConditionProcessorMock
         );
 
         parent::setUp();

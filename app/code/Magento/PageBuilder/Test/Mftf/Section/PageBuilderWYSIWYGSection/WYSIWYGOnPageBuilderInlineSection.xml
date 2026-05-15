@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  /**
-  * Copyright 2025 Adobe
-  * All Rights Reserved.
-  */
+ * Copyright 2020 Adobe
+ * All Rights Reserved.
+ */
 -->
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
@@ -31,7 +31,7 @@
         <element name="insertLink" type="button" selector=".tox-hugerte-inline button[aria-label='Insert/edit link']"/>
         <element name="imageSelector" type="button" selector=".tox-hugerte-inline button[aria-label='Insert/edit image']"/>
         <element name="table" type="button" selector=".tox-hugerte-inline button[aria-label='Table']"/>
-        <element name="tableMenuFirstItem" type="text" selector="div[title='Table']"/>
+        <element name="tableMenuFirstItem" type="text" selector="(//div[@class='tox-collection__group']//div[@role='menuitem' and contains(@class, 'tox-collection__item')])[1]"/>
         <element name="tableGrid" type="text" parameterized="true" selector="//div[@class='tox-insert-table-picker']//div[{{size}}]"/>
         <element name="fontSizeValue" type="text" parameterized="true" selector="//*[@data-mce-style and contains(@style, '{{size}}')]"/>
         <element name="tableToolbar" type="text" selector=".tox-pop .tox-pop__dialog .tox-toolbar"/>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  /**
-  * Copyright © Magento, Inc. All rights reserved.
-  * See COPYING.txt for license details.
-  */
+ * Copyright 2020 Adobe
+ * All Rights Reserved.
+ */
 -->
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
@@ -80,9 +80,10 @@
         <waitForElementVisible selector="{{PageBuilderLinkAttributeAdmin.LinkItemSelected($createCMSPageA.title$)}}" stepKey="seeSearchResultHighlighted"/>
 
         <!--Select another page from dropdown-->
-	<clearField selector="{{PageBuilderLinkAttributeAdmin.LinkSearch}}" stepKey="clearLinkSearchField"/>
-        <fillField selector="{{PageBuilderLinkAttributeAdmin.LinkSearch}}" userInput="{{$createCMSPageB.title$}}" stepKey="fillCreateCMSPageBInSearchField"/>
-	<scrollTo selector="{{PageBuilderLinkAttributeAdmin.SearchResult($createCMSPageB.title$)}}" stepKey="scrollToLinks"/>
+	    <clearField selector="{{PageBuilderLinkAttributeAdmin.LinkSearch}}" stepKey="clearLinkSearchField"/>
+        <fillField selector="{{PageBuilderLinkAttributeAdmin.LinkSearch}}" userInput="$createCMSPageB.title$" stepKey="fillCreateCMSPageBInSearchField"/>
+	    <waitForElementVisible selector="{{PageBuilderLinkAttributeAdmin.SearchResult($createCMSPageB.title$)}}" stepKey="waitForCMSPageBVisible"/>
+	    <scrollTo selector="{{PageBuilderLinkAttributeAdmin.SearchResult($createCMSPageB.title$)}}" stepKey="scrollToLinks"/>
         <waitForElementClickable selector="{{PageBuilderLinkAttributeAdmin.SearchResult($createCMSPageB.title$)}}" stepKey="waitForCMSPageBClickable"/>
         <click selector="{{PageBuilderLinkAttributeAdmin.SearchResult($createCMSPageB.title$)}}" stepKey="clickCMSPageBOnSearchResult"/>
         <grabTextFrom selector="{{PageBuilderLinkAttributeAdmin.DropdownInput}}" stepKey="textFromDropDown2"/>

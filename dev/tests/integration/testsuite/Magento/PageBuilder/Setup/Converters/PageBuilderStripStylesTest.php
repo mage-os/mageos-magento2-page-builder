@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2020 Adobe
+ * All Rights Reserved.
  */
 
 declare(strict_types = 1);
@@ -13,6 +13,7 @@ use DOMElement;
 use DOMXPath;
 use Magento\Framework\ObjectManagerInterface;
 use Magento\TestFramework\Helper\Bootstrap;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -34,12 +35,8 @@ class PageBuilderStripStylesTest extends TestCase
 
     /**
      * Test Batch Conversion of Page Builder Content
-     *
-     * @dataProvider conversionData
-     * @dataProvider conversionDataRaw
-     * @param string $htmlString
-     * @param int $expectedStyleTags
      */
+    #[DataProvider('conversionDataMerged')]
     public function testConvert(string $htmlString, int $expectedStyleTags)
     {
         $convertPageBuilderStripStyles = $this->objectManager->create(PageBuilderStripStyles::class);
@@ -232,5 +229,15 @@ class PageBuilderStripStylesTest extends TestCase
             ]
         ];
         // phpcs:enable Generic.Files.LineLength.TooLong
+    }
+
+    /**
+     * Merged datasets from conversionData and conversionDataRaw
+     *
+     * @return array
+     */
+    public static function conversionDataMerged(): array
+    {
+        return array_merge(self::conversionData(), self::conversionDataRaw());
     }
 }

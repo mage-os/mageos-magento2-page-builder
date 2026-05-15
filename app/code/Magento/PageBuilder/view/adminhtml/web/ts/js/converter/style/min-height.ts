@@ -1,6 +1,6 @@
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2020 Adobe
+ * All Rights Reserved.
  */
 
 import {DataObject} from "../../data-store";
@@ -30,6 +30,10 @@ export default class MinHeight implements ConverterInterface {
      */
     public toDom(name: string, data: DataObject): string {
         const value = get<string>(data, name);
+
+        if (value === undefined || value === null) {
+            return "";
+        }
 
         return value.split(/\+|\-|\*|\//).length > 1 ? `calc(${get(data, name)})` : value;
     }

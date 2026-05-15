@@ -11,6 +11,7 @@ use Magento\Framework\Session\SessionManagerInterface;
 use Magento\Store\Api\Data\StoreInterface;
 use Magento\Store\Model\StoreManagerInterface;
 use Magento\TestFramework\Helper\Bootstrap;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -69,10 +70,8 @@ class ConfigTest extends TestCase
      * @magentoConfigFixture admin_store web/unsecure/base_url http://backend.magento.test/
      * @magentoConfigFixture fixture_second_store_store web/unsecure/base_url http://website2.magento.test/
      * @magentoConfigFixture fixture_second_store_store web/secure/base_url https://website2.magento.test/
-     * @param string $store
-     * @param string $mediaUrl
-     * @dataProvider storeDataProvider
      */
+    #[DataProvider('storeDataProvider')]
     public function testMediaUrlShouldBeTheSameAsBackendMediaURL(string $store, string $mediaUrl): void
     {
         $this->storeManager->setCurrentStore($store);

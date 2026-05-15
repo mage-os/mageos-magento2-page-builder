@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  /**
-  * Copyright 2024 Adobe All rights reserved.
-  * See COPYING.txt for license details.
-  */
+ * Copyright 2020 Adobe
+ * All Rights Reserved.
+ */
 -->
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="BannerOnBackend">
@@ -67,6 +67,7 @@
         <element name="inlineWYSIWYGEditorWithTag" type="text" selector="(//div[contains(@class,'pagebuilder-banner') and @data-element='main'])[{{bannerIndex}}]//div[contains(@class,'inline-wysiwyg')]//{{tag}}" parameterized="true"/>
         <!-- Video Background -->
         <element name="videoBackgroundJarallaxContainer" type="text" selector="(//div[contains(@class,'pagebuilder-banner') and @data-element='main'])[{{bannerIndex}}]//div[@data-element='wrapper']//div[contains(@id,'jarallax-container')]" parameterized="true"/>
+        <element name="videoBackgroundJarallaxImageLayer" type="text" selector="(//div[contains(@class,'pagebuilder-banner') and @data-element='main'])[{{bannerIndex}}]//div[@data-element='wrapper']//div[contains(@id,'jarallax-container')]//div[1]" parameterized="true"/>
         <element name="videoBackgroundVideoElement" type="text" selector="((//div[contains(@class,'pagebuilder-banner') and @data-element='main'])[{{bannerIndex}}]//div[@data-element='wrapper']//div[contains(@id,'jarallax-container')]//iframe)[last()]|((//div[contains(@class,'pagebuilder-banner') and @data-element='main'])[{{bannerIndex}}]//div[@data-element='wrapper']//div[contains(@id,'jarallax-container')]//video)[last()]" parameterized="true"/>
         <element name="videoBackgroundVideoUrl" type="text" selector="(//div[contains(@class,'pagebuilder-banner') and @data-element='main'])[{{bannerIndex}}]//div[@data-element='wrapper']//div[contains(@id,'jarallax-container')]//*[contains(@src,'{{videoURL}}')]" parameterized="true"/>
         <element name="videoBackgroundOverlayElement" type="text" selector="(//div[contains(@class,'pagebuilder-banner') and @data-element='main'])[{{bannerIndex}}]//div[@data-element='wrapper']//div[@data-element='video_overlay']" parameterized="true"/>

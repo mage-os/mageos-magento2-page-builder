@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2020 Adobe
+ * All Rights Reserved.
  */
 declare(strict_types=1);
 
@@ -11,6 +11,7 @@ use Magento\TestFramework\Helper\Bootstrap;
 use Magento\PageBuilder\Model\Dom\Adapter\HtmlDocumentInterface;
 use Magento\PageBuilder\Model\Dom\Adapter\ElementInterface;
 use Magento\PageBuilder\Model\Dom\HtmlDocument;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class ElementTest extends TestCase
@@ -30,12 +31,8 @@ class ElementTest extends TestCase
 
     /**
      * Tests the removeStyle function
-     *
-     * @dataProvider removeStylesDataProvider
-     * @param string $elementData
-     * @param string $styleProperty
-     * @param string $expectedResult
      */
+    #[DataProvider('removeStylesDataProvider')]
     public function testRemoveStyle(string $elementData, string $styleProperty, string $expectedResult)
     {
         $document = $this->objectManager->create(
@@ -72,13 +69,8 @@ class ElementTest extends TestCase
 
     /**
      * Tests the addStyle function
-     *
-     * @dataProvider addStyleDataProvider
-     * @param string $elementData
-     * @param string $styleProperty
-     * @param string $styleValue
-     * @param string $expectedResult
      */
+    #[DataProvider('addStyleDataProvider')]
     public function testAddStyle(string $elementData, string $styleProperty, string $styleValue, string $expectedResult)
     {
         $document = $this->objectManager->create(

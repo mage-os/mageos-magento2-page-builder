@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  /**
-  * Copyright 2025 Adobe
-  * All Rights Reserved.
-  */
+ * Copyright 2020 Adobe
+ * All Rights Reserved.
+ */
 -->
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
@@ -25,24 +25,29 @@
             <argument name="property" value="PageBuilderVideoBackgroundLazyLoad_Disabled"/>
         </actionGroup>
         <remove keyForRemoval="setPlayOnlyWhenVisibleEnabled"/>
-        <actionGroup ref="validateVideoBackgroundLoaded" stepKey="validateVideoPlayingStage1">
+        <actionGroup ref="ValidateVideoBackgroundLoadedButNotPlayingAlternateActionGroup" stepKey="validateVideoPlayingStage1">
             <argument name="section" value="BannerOnBackend"/>
+            <argument name="videoUrl" value="PageBuilderVideoBackgroundUrl_YouTube_NonEmbedded"/>
             <argument name="index" value="4"/>
         </actionGroup>
-        <actionGroup ref="validateVideoBackgroundLoaded" stepKey="validateVideoNotPlayingStage1">
+        <actionGroup ref="ValidateVideoBackgroundLoadedButNotPlayingAlternateActionGroup" stepKey="validateVideoNotPlayingStage1">
             <argument name="section" value="BannerOnBackend"/>
+            <argument name="videoUrl" value="PageBuilderVideoBackgroundUrl_YouTube_NonEmbedded"/>
             <argument name="index" value="4"/>
         </actionGroup>
-        <actionGroup ref="validateVideoBackgroundLoaded" stepKey="validateVideoPlayingStage2">
+        <actionGroup ref="ValidateVideoBackgroundLoadedButNotPlayingAlternateActionGroup" stepKey="validateVideoPlayingStage2">
             <argument name="section" value="BannerOnBackend"/>
+            <argument name="videoUrl" value="PageBuilderVideoBackgroundUrl_YouTube_NonEmbedded"/>
             <argument name="index" value="4"/>
         </actionGroup>
-        <actionGroup ref="validateVideoBackgroundLoaded" stepKey="validateVideoNotPlayingStorefront">
+        <actionGroup ref="ValidateVideoBackgroundLoadedButNotPlayingAlternateActionGroup" stepKey="validateVideoNotPlayingStorefront">
             <argument name="section" value="BannerOnFrontend"/>
+            <argument name="videoUrl" value="PageBuilderVideoBackgroundUrl_YouTube_NonEmbedded"/>
             <argument name="index" value="4"/>
         </actionGroup>
-        <actionGroup ref="validateVideoBackgroundLoaded" stepKey="validateVideoPlayingStorefront">
+        <actionGroup ref="ValidateVideoBackgroundLoadedButNotPlayingAlternateActionGroup" stepKey="validateVideoPlayingStorefront">
             <argument name="section" value="BannerOnFrontend"/>
+            <argument name="videoUrl" value="PageBuilderVideoBackgroundUrl_YouTube_NonEmbedded"/>
             <argument name="index" value="4"/>
         </actionGroup>
     </test>
