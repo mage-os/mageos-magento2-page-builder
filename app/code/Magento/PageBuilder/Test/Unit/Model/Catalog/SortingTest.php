@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2019 Adobe
+ * All Rights Reserved.
  */
 declare(strict_types=1);
 
@@ -12,7 +12,6 @@ use Magento\PageBuilder\Model\Catalog\Sorting;
 use Magento\PageBuilder\Model\Catalog\Sorting\Factory;
 use Magento\PageBuilder\Model\Catalog\Sorting\OptionInterface;
 use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\MockObject\Stub\ReturnValueMap;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -90,7 +89,7 @@ class SortingTest extends TestCase
         $factoryValueMap = $this->createFactoryValueMap($optionMocks, $sortClassesMap);
 
         $this->sortingFactoryMock->method('create')
-            ->will($factoryValueMap);
+            ->willReturnMap($factoryValueMap);
 
         $sortClasses = [];
 
@@ -112,9 +111,9 @@ class SortingTest extends TestCase
      *
      * @param array $optionMocks
      * @param array $sortClassesMap
-     * @return ReturnValueMap
+     * @return array
      */
-    private function createFactoryValueMap(array $optionMocks, array $sortClassesMap): ReturnValueMap
+    private function createFactoryValueMap(array $optionMocks, array $sortClassesMap): array
     {
         $map = [];
 
@@ -122,7 +121,7 @@ class SortingTest extends TestCase
             $map[] = [$sortClassesMap[$key]['className'], [], $mock];
         }
 
-        return $this->returnValueMap($map);
+        return $map;
     }
 
     /**
@@ -163,7 +162,7 @@ class SortingTest extends TestCase
      */
     private function createOptionMock(string $label): MockObject
     {
-        $mock = $this->getMockForAbstractClass(OptionInterface::class);
+        $mock = $this->createMock(OptionInterface::class);
         $mock->method('getLabel')
             ->willReturn(__($label));
 

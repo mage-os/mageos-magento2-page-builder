@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  /**
-  * Copyright © Magento, Inc. All rights reserved.
-  * See COPYING.txt for license details.
-  */
+ * Copyright 2020 Adobe
+ * All Rights Reserved.
+ */
 -->
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
@@ -16,7 +16,6 @@
         <element name="shortDescription" type="button" selector=".product-info-main div.product.attribute.overview div.value"/>
         <element name="description" type="button" selector=".page-main-description"/>
         <element name="attributes" type="button" selector=".page-main-pagebuilder-attributes"/>
-        <element name="moreInformation" type="button" selector=".additional-attributes-wrapper"/>
         <element name="infoMain" type="button" selector=".product-info-main"/>
         <element name="media" type="button" selector=".product.media"/>
         <element name="reviews" type="button" selector=".block.review-add"/>

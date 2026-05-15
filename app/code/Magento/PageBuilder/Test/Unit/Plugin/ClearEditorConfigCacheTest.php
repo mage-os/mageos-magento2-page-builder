@@ -1,8 +1,7 @@
 <?php
 /**
- * Copyright 2024 Adobe
- * All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2020 Adobe
+ * All Rights Reserved.
  */
 declare(strict_types=1);
 
@@ -14,6 +13,7 @@ use Magento\PageBuilder\Model\EditorConfigCacheCleaner;
 use Magento\PageBuilder\Plugin\ClearEditorConfigCache;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * Test for page builder cache config cleaner plugin
@@ -58,9 +58,9 @@ class ClearEditorConfigCacheTest extends TestCase
     /**
      * Test that page builder cache config cleaner is executed if secret key is included in backend URLs
      *
-     * @dataProvider afterLoginDataProvider
      * @param bool $isUseSecretKey
      */
+    #[DataProvider('afterLoginDataProvider')]
     public function testAfterLogin(bool $isUseSecretKey): void
     {
         $this->backendUrl->expects($this->once())

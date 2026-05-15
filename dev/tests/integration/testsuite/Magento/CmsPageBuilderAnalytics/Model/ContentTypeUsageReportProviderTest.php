@@ -1,8 +1,7 @@
 <?php
 /**
- * Copyright 2024 Adobe
- * All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2019 Adobe
+ * All Rights Reserved.
  */
 
 declare(strict_types=1);
@@ -11,6 +10,7 @@ namespace Magento\CmsPageBuilderAnalytics\Model;
 
 use Magento\TestFramework\Helper\Bootstrap;
 use Magento\Framework\App\ResourceConnection;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * @magentoAppArea adminhtml
@@ -20,8 +20,8 @@ class ContentTypeUsageReportProviderTest extends \PHPUnit\Framework\TestCase
     /**
      * @magentoAppIsolation enabled
      * @magentoDataFixture Magento/CmsPageBuilderAnalytics/_files/pages.php
-     * @dataProvider reportDataProvider
      */
+    #[DataProvider('reportDataProvider')]
     public function testGetReport($expectedReportData, $ignoredContentTypes)
     {
         /* @var $resourceConnection ResourceConnection */
