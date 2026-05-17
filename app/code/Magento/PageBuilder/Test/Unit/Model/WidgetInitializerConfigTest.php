@@ -1,8 +1,7 @@
 <?php
 /**
- * Copyright 2024 Adobe
- * All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2020 Adobe
+ * All Rights Reserved.
  */
 declare(strict_types=1);
 
@@ -10,6 +9,8 @@ namespace Magento\PageBuilder\Test\Unit\Model;
 
 use Magento\PageBuilder\Model\WidgetInitializerConfig;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
+use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 
 /**
  * Test for WidgetInitializerConfig
@@ -19,12 +20,15 @@ class WidgetInitializerConfigTest extends TestCase
     /**
      * Test different config variation.
      *
-     * @dataProvider configProvider
      * @param array $config
      * @param array $expectedConfig
      */
+    #[DataProvider('configProvider')]
     public function testGetConfig(array $config, array $expectedConfig): void
     {
+        $objectManagerHelper = new ObjectManager($this);
+        $objectManagerHelper->prepareObjectManager();
+        
         $model = new WidgetInitializerConfig(
             $config
         );

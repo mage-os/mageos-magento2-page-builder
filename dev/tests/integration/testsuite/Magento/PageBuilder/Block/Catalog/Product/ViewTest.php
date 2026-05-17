@@ -1,8 +1,7 @@
 <?php
 /**
- * Copyright 2024 Adobe
- * All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2020 Adobe
+ * All Rights Reserved.
  */
 declare(strict_types=1);
 
@@ -12,6 +11,7 @@ use Magento\Framework\View\LayoutInterface;
 use Magento\Review\Block\Product\Review;
 use Magento\TestFramework\Helper\Bootstrap;
 use Magento\Framework\View\Element\Template;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -41,11 +41,8 @@ class ViewTest extends TestCase
 
     /**
      * Check that Section Wrapper page contains section ID if it was provided.
-     *
-     * @param string $sectionId
-     * @return void
-     * @dataProvider sectionWrapperDataProvider
      */
+    #[DataProvider('sectionWrapperDataProvider')]
     public function testSectionWrapperWithProvidedSectionId(string $sectionId): void
     {
         $wrapperBlock = $this->prepareSectionWrapperBlock();
@@ -56,11 +53,8 @@ class ViewTest extends TestCase
 
     /**
      * Check that Section Wrapper page does NOT contain section ID if it was NOT provided.
-     *
-     * @param string $sectionId
-     * @return void
-     * @dataProvider sectionWrapperDataProvider
      */
+    #[DataProvider('sectionWrapperDataProvider')]
     public function testSectionWrapperWithoutSectionId(string $sectionId): void
     {
         $wrapperBlock = $this->prepareSectionWrapperBlock();

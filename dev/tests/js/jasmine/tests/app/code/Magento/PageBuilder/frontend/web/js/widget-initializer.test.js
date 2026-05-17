@@ -1,12 +1,12 @@
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright 2022 Adobe
+ * All Rights Reserved.
  */
 define([
     'squire',
     'jquery'
 ], function (Squire, $) {
-    'use strict';
+    'use strict'; // eslint-disable-line strict
 
     var widgetInitializer,
         injector = new Squire(),
@@ -41,7 +41,7 @@ define([
         }
     };
 
-    describe('Magento_PageBuilder/js/content-type/map/appearance/default/widget', function () {
+    describe('Magento_PageBuilder/js/widget-initializer', function () {
         beforeEach(loadWidgetInitializer);
         afterEach(removeCreatedElement);
 
