@@ -15,7 +15,7 @@ $block->setTitle(
 <a href="{{store url=""}}">store url</a>
 <p>Config value: "{{config path="web/unsecure/base_url"}}".</p>
 <p>Custom variable: "{{customvar code="variable_code"}}".</p>
-<script>alert("hello")</script>
+<script type="text/x-magento-init">alert("test")</script>
 '
 )->setIsActive(
     1

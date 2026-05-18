@@ -31,7 +31,7 @@ class CmsStaticBlockTest extends \PHPUnit\Framework\TestCase
         ]);
         $this->assertArrayHasKey('content', $result);
         $content = $result['content'];
-        $this->assertStringNotContainsString('<script>', $content);
+        $this->assertStringNotContainsString('<script type="text/x-magento-init">', $content);
         $this->assertStringContainsString('<p>Custom variable: "HTML Value".</p>', $content);
         $this->assertStringNotContainsString('<html>', $content);
         $this->assertStringNotContainsString('<!DOCTYPE', $content);
