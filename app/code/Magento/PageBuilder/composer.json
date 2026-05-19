@@ -1,42 +1,46 @@
 {
-    "name": "magento/module-page-builder",
-    "description": "Page Builder module",
-    "require": {
-        "magento/framework": "*",
-        "magento/module-eav": "*",
-        "magento/module-store": "*",
-        "magento/module-backend": "*",
-        "magento/module-cms": "*",
-        "magento/module-catalog": "*",
-        "magento/module-catalog-inventory": "*",
-        "magento/module-config": "*",
-        "magento/module-ui": "*",
-        "magento/module-variable": "*",
-        "magento/module-widget": "*",
-        "magento/module-catalog-widget": "*",
-        "magento/module-rule": "*",
-        "magento/module-directory": "*",
-        "magento/module-email": "*",
-        "magento/module-theme": "*",
-        "magento/module-wishlist": "*",
-        "magento/module-require-js": "*",
-        "magento/module-media-storage": "*",
-        "php": "~8.3.0||~8.4.0||~8.5.0",
-        "phpgt/dom": "^4.1"
-    },
-    "suggest": {
-        "magento/module-review": "*"
-    },
-    "type": "magento2-module",
-    "license": [
-        "proprietary"
+  "name": "mage-os/module-page-builder",
+  "description": "Page Builder module",
+  "require": {
+    "mage-os/framework": "3.0.0",
+    "mage-os/module-eav": "3.0.0",
+    "mage-os/module-store": "3.0.0",
+    "mage-os/module-backend": "3.0.0",
+    "mage-os/module-cms": "3.0.0",
+    "mage-os/module-catalog": "3.0.0",
+    "mage-os/module-catalog-inventory": "3.0.0",
+    "mage-os/module-config": "3.0.0",
+    "mage-os/module-ui": "3.0.0",
+    "mage-os/module-variable": "3.0.0",
+    "mage-os/module-widget": "3.0.0",
+    "mage-os/module-catalog-widget": "3.0.0",
+    "mage-os/module-rule": "3.0.0",
+    "mage-os/module-directory": "3.0.0",
+    "mage-os/module-email": "3.0.0",
+    "mage-os/module-theme": "3.0.0",
+    "mage-os/module-wishlist": "3.0.0",
+    "mage-os/module-require-js": "3.0.0",
+    "mage-os/module-media-storage": "3.0.0",
+    "php": "~8.3.0||~8.4.0||~8.5.0",
+    "phpgt/dom": "^4.1"
+  },
+  "suggest": {
+    "mage-os/module-review": "3.0.0"
+  },
+  "type": "magento2-module",
+  "license": [
+    "proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
     ],
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "Magento\\PageBuilder\\": ""
-        }
+    "psr-4": {
+      "Magento\\PageBuilder\\": ""
     }
+  },
+  "version": "3.0.0",
+  "replace": {
+    "magento/module-page-builder": "2.2.7"
+  }
 }
